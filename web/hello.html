@@ -7,9 +7,22 @@
       background-color: #333333;
       text-align: center;
     }
+    /*
+      Animation inspired from:
+      biob.in/2019/01/bouncing-text-animation-effect-using.html
+    */
     h1 {
       font-size: calc(3vw + 3px);
       color: white;
+      margin-top: calc(50vh - 3vw - 3px);
+      text-shadow: 0.1vw 0.1vw 0vw #000000;
+      animation: bounce 0.5s ease infinite alternate;
+    }
+    @keyframes bounce {
+      100% {
+        margin-top: calc(50vh - 4.5vw - 4.5px);
+        text-shadow: 0.5vw calc(2.1vw + 1.5px) 0.3vw #222222
+      }
     }
   </style>
 </head>
