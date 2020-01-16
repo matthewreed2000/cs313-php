@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>This is a title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="team01.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="team01.js"></script>
+</head>
+<body>
+  <div id="custom" class="col-lg-5 h1">Test 1</div>
+  <div id="div2" class="col-lg-4 h3">Test 2</div>
+  <div id="div3" class="col-lg-3 h6">Test 3</div>
+  <p>Enter a color (#000000 or ex. red), Toggle to fade 'Test 3', Click for an alert:</p>
+  <input type="text" placeholder="Change color" id="colorInput"/>
+  <button type="button" onclick="changeDiv(document.getElementById('colorInput').value);">Change Color</button>
+  <button type="button" id="fade">Toggle</button>
+  <button type="button" onclick="buttonClick();">Click Me</button>
+  <br><br>
+  <label>Change color of div2:</label>
+  <br>
+  <input type="text" placeholder="Change Color" id="color_div2">
+  <button type="button" id="change2">Change Div2</button>
+</body>
+</html>

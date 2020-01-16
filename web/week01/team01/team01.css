@@ -1,0 +1,31 @@
+body {
+  background-color: #333333;
+  margin: 50px 100px;
+}
+
+p,label {
+  color: white;
+}
+
+div {
+  border-radius: 4vw;
+  padding: 2vw;
+  font-size: calc(4vh + 4px);
+  color: white;
+}
+
+div:nth-child(1) {
+  background-color: red;
+}
+
+div:nth-child(2) {
+  background-color: green;
+}
+
+div:nth-child(3) {
+  background-color: blue;
+}
+
+div:hover {
+  font-weight: bold;
+}
