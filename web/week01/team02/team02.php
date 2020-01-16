@@ -15,7 +15,7 @@
     for ($i = 0; $i < 10; $i++) {
       echo '<div';
       if ($i % 2 == 0) {
-        echo ' class=\"colored\"';
+        echo " class=\"colored\"";
       }
       echo "><p>This is div #$i</p></div>";
     }
