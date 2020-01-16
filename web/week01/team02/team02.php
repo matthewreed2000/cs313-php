@@ -5,10 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
     body {
       text-align: center;
     }
-    div {
+    div .special {
+      border-style: solid;
       border-width: 1px;
       border-color: black;
     }
@@ -19,14 +23,11 @@
 </head>
 <body>
   <h1>PHP Team Activity</h1>
-  <?php
-    for ($i = 0; $i < 10; $i++) {
-      echo '<div';
-      if ($i % 2 == 0) {
-        echo " class=\"colored\"";
-      }
-      echo "><p>This is div #$i</p></div>";
-    }
-  ?>
+  <div style="width:50%; float:left;">
+    <?php include "injectStuff.php"; ?>
+  </div>
+  <div style="width:50%; float:right;">
+    <?php include "injectStuff.php"; ?>
+  </div>
 </body>
 </html>
