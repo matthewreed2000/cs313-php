@@ -10,6 +10,7 @@
     }
     div {
       border-width: 1px;
+      border-color: black;
     }
     .colored {
       color: red;
