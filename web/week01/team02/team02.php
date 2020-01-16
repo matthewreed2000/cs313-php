@@ -5,12 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <style type="text/css">
+    body {
+      text-align: center;
+    }
+    div {
+      border-width: 1px;
+    }
     .colored {
       color: red;
     }
   </style>
 </head>
 <body>
+  <h1>PHP Team Activity</h1>
   <?php
     for ($i = 0; $i < 10; $i++) {
       echo '<div';
