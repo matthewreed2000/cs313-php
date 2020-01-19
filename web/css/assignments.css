@@ -1,0 +1,14 @@
+:root {
+  --header-bg-color: #8e3b46;
+  --header-text-color: #e0777d;
+  --main-bg-color: #f0cf65;
+  --main-text-color: #260c1a;
+  --secondary-bg-color: #ff3f34;
+  --secondary-text-color: #ff5e57;
+  --tertiary-bg-color: #6cae75;
+  --tertiary-text-color: #d2dae2;
+  --footer-bg-color: #8e3b46;
+  --footer-text-color: #ddedaa;
+  --shadow-bright-color: #808e9b;
+  --shadow-dark-color: #1e272e;
+}

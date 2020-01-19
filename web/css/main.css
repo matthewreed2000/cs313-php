@@ -1,0 +1,130 @@
+:root {
+  --header-bg-color: #1e272e;
+  --header-text-color: #d2dae2;
+  --main-bg-color: #d2dae2;
+  --main-text-color: #1e272e;
+  --secondary-bg-color: #7692ff;
+  --secondary-text-color: #abd2fa;
+  --tertiary-bg-color: #6cae75;
+  --tertiary-text-color: #d2dae2;
+  --footer-bg-color: #485460;
+  --footer-text-color: #d2dae2;
+  --shadow-bright-color: #808e9b;
+  --shadow-dark-color: #1e272e;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-dark-color);
+}
+
+h1 {
+  font-size: calc(3vw + 3px);
+}
+
+p {
+  font-size: calc(1vw + 1px);
+  margin-left: calc(1.25vw + 1.25px);
+  margin-right: calc(1.25vw + 1.25px);
+}
+
+/*Found on: freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c*/
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-top: calc(2.5vw + 2.5px);;
+  padding-bottom: calc(2.5vw + 2.5px);;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-dark-color);
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(2.5vw + 2.5px);
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-bright-color);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: calc(2.5vw + 2.5px);
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-bright-color);
+  text-align: right;
+}
+
+#header p, #footer p {
+  margin-top: calc(0.75vw + 0.75px);
+}
+
+#header a {
+  text-decoration: none;
+  color: var(--header-text-color);
+}
+
+#header a:hover {
+  color: var(--secondary-text-color);
+}
+
+.jumbotron {
+  padding: 2.5vh;
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  font-family: sans-serif;
+}
+
+.picture-menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.picture-menu > a {
+  margin: 1vw;
+  text-align: center;
+  flex-basis: 300px;
+  flex-shrink: 0;
+  background-color: var(--tertiary-bg-color);
+  color: var(--tertiary-text-color);
+  text-decoration: none;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.picture-menu > a > img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(50%);
+}
+
+.picture-menu > a:hover {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+}
+
+.picture-menu > a:hover > img {
+  filter: grayscale(0);
+}
+
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
