@@ -1,0 +1,9 @@
+id,display,price,img
+d4,4-Sided Die,$3.00,img/d4.jpg
+d6,6-Sided Die,$0.50,img/d6.jpg
+d8,8-Sided Die,$4.27,img/d8.jpg
+d10,10-Sided Die,$2.00,img/d10.jpg
+d100,10-Sided Die (Marked with Multiples of 10),$2.00,img/d100.jpg
+d12,12-Sided Die,$2.25,img/d12.jpg
+d20,20-Sided Die,$2.50,img/d20.jpg
+fullSet,Complete Set of Dice,$11.59,img/fullSet.jpg

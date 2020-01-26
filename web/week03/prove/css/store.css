@@ -1,0 +1,73 @@
+:root {
+  --quaternary-bg-color: #99c5b5;
+  --quaternary-text-color: #706C61;
+}
+
+.product-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product {
+  margin: 1vw;
+  text-align: center;
+  flex-basis: 300px;
+  flex-shrink: 0;
+  background-color: var(--tertiary-bg-color);
+  color: var(--tertiary-text-color);
+  text-decoration: none;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.product > img {
+  width: 100%;
+  height: auto;
+}
+
+.product > p {
+  margin: 0;
+  font-size: calc(1.5vw + 1.5px);
+}
+
+.input-area {
+  width: 80%;
+  margin: 1vw auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.input-area > input {
+  border: 0;
+  box-shadow: none;
+  text-align: center;
+  font-size: calc(3vw + 3px);
+  width: 100%;
+  background-color: var(--tertiary-bg-color);
+  color: var(--tertiary-text-color)
+}
+
+.input-area > button {
+  border: 0;
+  box-shadow: none;
+  border-radius: 1vw;
+  background-color: var(--tertiary-bg-color);
+  color: var(--tertiary-text-color);
+  font-size: calc(3vw + 3px);
+}
+
+.input-area > .add-cart {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: var(--quaternary-bg-color);
+  color: var(--quaternary-text-color);
+  font-size: calc(2vw + 2px);
+}
+
+.input-area > button:hover {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  cursor: pointer;
+}

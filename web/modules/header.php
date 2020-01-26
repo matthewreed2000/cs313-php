@@ -1,3 +1,3 @@
 <header id="header">
-  <a href="/"><p>Home</p></a>
+  <a href="/">Home</a>
 </header>

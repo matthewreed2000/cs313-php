@@ -51,9 +51,26 @@ p {
   top: 0;
   width: 100%;
   height: calc(2.5vw + 2.5px);
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--header-bg-color);
   color: var(--header-text-color);
   text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-bright-color);
+}
+
+
+#header a {
+  text-decoration: none;
+  color: var(--header-text-color);
+  margin-left: calc(1.25vw + 1.25px);
+  margin-right: calc(1.25vw + 1.25px);
+}
+
+#header a:hover {
+  color: var(--secondary-text-color);
 }
 
 #footer {
@@ -67,17 +84,8 @@ p {
   text-align: right;
 }
 
-#header p, #footer p {
+#footer p {
   margin-top: calc(0.75vw + 0.75px);
-}
-
-#header a {
-  text-decoration: none;
-  color: var(--header-text-color);
-}
-
-#header a:hover {
-  color: var(--secondary-text-color);
 }
 
 .jumbotron {
