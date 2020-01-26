@@ -12,7 +12,7 @@
       <div class="jumbotron">
         <h1>Assignments</h1>
       </div>
-      <p>Coming Soon...</p>
+      <a href="week03/prove/browse.php">Week 03</a>
     </main>
     <?php include "modules/footer.html"?>
   </div>

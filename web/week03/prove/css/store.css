@@ -71,3 +71,9 @@
   color: var(--secondary-text-color);
   cursor: pointer;
 }
+/*
+.receipt {
+  width: 50%;
+  margin: auto;
+  background-color: white;
+}*/

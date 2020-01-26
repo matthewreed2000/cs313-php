@@ -25,7 +25,7 @@
     foreach ($_SESSION['items'] as $key => $value) {
       if (isset($stock[$key]))
       {
-        $items[$key] = $value;
+        $items[$key] = htmlspecialchars($value);
       }
     }
   }
