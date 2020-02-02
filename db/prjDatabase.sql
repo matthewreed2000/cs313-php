@@ -22,15 +22,24 @@ CREATE TABLE PUBLIC.Task (
    StartTime      SMALLINT       DEFAULT 0,
    EndTime        SMALLINT       DEFAULT 1439,
    Priority       INT            DEFAULT 0,
-   RepeatID       INT            REFERENCES PUBLIC.Repeat(ID)
+   RepeatID       INT,
+   FOREIGN KEY (RepeatID)
+      REFERENCES PUBLIC.Repeat(ID)
+      ON DELETE SET NULL
 );
 
 -- Connects tasks to user and sets date
 CREATE TABLE PUBLIC.UserTask (
    ID       SERIAL   NOT NULL PRIMARY KEY,
-   UserID   INT      NOT NULL REFERENCES PUBLIC.User(ID),
-   TaskID   INT      NOT NULL REFERENCES PUBLIC.Task(ID),
-   SetDate  DATE     DEFAULT NOW()
+   UserID   INT      NOT NULL,
+   TaskID   INT      NOT NULL,
+   SetDate  DATE     DEFAULT NOW(),
+   FOREIGN KEY (UserID)
+      REFERENCES PUBLIC.User(ID)
+      ON DELETE CASCADE,
+   FOREIGN KEY (TaskID)
+      REFERENCES PUBLIC.Task(ID)
+      ON DELETE CASCADE
 );
 
 -- These may be changed later if I find a better way of organizing.
