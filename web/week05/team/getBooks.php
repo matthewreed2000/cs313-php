@@ -15,12 +15,14 @@
 
   $scriptures = $db->prepare("SELECT * FROM scripture WHERE book = '$book'");
   $scriptures->execute();
-  echo '[';
+  echo "[\n";
   while ($scripRow = $scriptures->fetch(PDO::FETCH_ASSOC)) {
-    echo "\n\t'book': " . $scripRow['book'] . ",\n";
-    echo "\n\t'chapter': " . $scripRow['chapter'] . ",\n";
-    echo "\n\t'verse': " . $scripRow['verse'] . ",\n";
-    echo "\n\t'content': " . $scripRow['content'] . ",\n";
+    echo "{\n";
+    echo "\t'book': " . $scripRow['book'] . ",\n";
+    echo "\t'chapter': " . $scripRow['chapter'] . ",\n";
+    echo "\t'verse': " . $scripRow['verse'] . ",\n";
+    echo "\t'content': " . $scripRow['content'] . "\n";
+    echo "}\n";
   }
   echo ']';
 ?>
