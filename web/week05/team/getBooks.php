@@ -17,10 +17,10 @@
   $scriptures->execute();
   echo '[';
   while ($scripRow = $scriptures->fetch(PDO::FETCH_ASSOC)) {
-    echo $scripRow['book'];
-    echo $scripRow['chapter'];
-    echo $scripRow['verse'];
-    echo $scripRow['content'];
+    echo "\n\t'book': $scripRow['book'],\n";
+    echo "\n\t'chapter': $scripRow['chapter'],\n";
+    echo "\n\t'verse': $scripRow['verse'],\n";
+    echo "\n\t'content': $scripRow['content'],\n";
   }
   echo ']';
 ?>
