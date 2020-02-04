@@ -21,5 +21,6 @@ function get_db() {
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
+  return $db;
 }
 ?>
