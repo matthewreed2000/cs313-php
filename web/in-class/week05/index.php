@@ -19,7 +19,10 @@
   //   echo "<p>$first_name $last_name is my $relationship_id</p>";
   // }
 
-try {
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+
    require "dbConnect.php";
    $db = get_db();
    $family_members = $db->prepare("SELECT * FROM w5_family_members");
@@ -37,8 +40,5 @@ try {
       }
       echo "<p>$first_name $last_name is my $relationship ($relationship_id)</p>";
    }
-}
-catch () {
-  echo "TEST";
-}
+
 ?>
