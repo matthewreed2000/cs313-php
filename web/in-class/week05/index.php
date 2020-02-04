@@ -38,7 +38,7 @@ try {
       echo "<p>$first_name $last_name is my $relationship ($relationship_id)</p>";
    }
 }
-catch (\Exception $ex) {
+catch () {
   echo "TEST";
 }
 ?>
