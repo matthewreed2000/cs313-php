@@ -36,7 +36,7 @@
 
    ?>
 
-   <form action="results.php" method="POST">
+   <form action="getBooks.php" method="POST">
    Choose a Book: <input type="text" name="book"><br>
    <input type="submit">
    </form>
