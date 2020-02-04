@@ -1,5 +1,5 @@
 <?php
-  require "dbconnect.php";
+  require "dbConnect.php";
   $db = get_db();
 
   $family_members = $db.prepare('SELECT * FROM week05family;');
