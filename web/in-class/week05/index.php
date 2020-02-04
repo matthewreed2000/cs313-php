@@ -19,9 +19,9 @@
   //   echo "<p>$first_name $last_name is my $relationship_id</p>";
   // }
 
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+  // ini_set('display_errors', 1);
+  // ini_set('display_startup_errors', 1);
+  // error_reporting(E_ALL);
 
    require "dbConnect.php";
    $db = get_db();
