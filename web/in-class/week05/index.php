@@ -27,7 +27,7 @@
    {
       $first_name = $fRow["first_name"];
       $last_name = $fRow["last_name"];
-      $relationship_id = $fRow["relationship_id"];
+      $relationship_id = $fRow["relationship"];
       $relationships = $db->prepare("SELECT description FROM week05rel WHERE id = $relationship_id");
       $relationships->execute();
       while ($rRow = $relationships->fetch(PDO::FETCH_ASSOC))
