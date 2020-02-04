@@ -15,7 +15,12 @@
 
   $scriptures = $db->prepare("SELECT * FROM scripture WHERE book = '$book'");
   $scriptures->execute();
+  echo '[';
   while ($scripRow = $scriptures->fetch(PDO::FETCH_ASSOC)) {
     echo $scripRow['book'];
+    echo $scripRow['chapter'];
+    echo $scripRow['verse'];
+    echo $scripRow['content'];
   }
+  echo ']';
 ?>
