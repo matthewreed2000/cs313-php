@@ -18,9 +18,9 @@
   echo '[';
   while ($scripRow = $scriptures->fetch(PDO::FETCH_ASSOC)) {
     echo "\n\t'book': $scripRow['book'],\n";
-    echo "\n\t'chapter': $scripRow['chapter'],\n";
-    echo "\n\t'verse': $scripRow['verse'],\n";
-    echo "\n\t'content': $scripRow['content'],\n";
+    // echo "\n\t'chapter': $scripRow['chapter'],\n";
+    // echo "\n\t'verse': $scripRow['verse'],\n";
+    // echo "\n\t'content': $scripRow['content'],\n";
   }
   echo ']';
 ?>
