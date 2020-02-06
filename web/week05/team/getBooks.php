@@ -23,13 +23,13 @@
     if ($count > 0) {
       echo ',';
     }
-    echo "\n{\n";
-    echo "\t'book': \"" . $scripRow['book'] . "\",\n";
-    echo "\t'chapter': \"" . $scripRow['chapter'] . "\",\n";
-    echo "\t'verse': \"" . $scripRow['verse'] . "\",\n";
-    echo "\t'content': \"" . $scripRow['content'] . "\"\n";
+    echo "{";
+    echo "'book': \"" . $scripRow['book'] . "\",";
+    echo "'chapter': \"" . $scripRow['chapter'] . "\",";
+    echo "'verse': \"" . $scripRow['verse'] . "\",";
+    echo "'content': \"" . $scripRow['content'] . "\"";
     echo '}';
     $count = $count + 1;
   }
-  echo "\n]";
+  echo "]";
 ?>
