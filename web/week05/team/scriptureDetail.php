@@ -9,24 +9,28 @@
   if (isset($_GET['content_id'])) {
     $content_id = $_GET['content_id'];
     $content_id = preg_replace('/[^\d]/', '', $content_id);
+
+    $scriptures = $db->prepare("SELECT * FROM scripture WHERE content_id='$content_id'");
+    $scriptures->execute();
+    
+    $scripture = $scriptures->fetch(PDO::FETCH_ASSOC);
+    $book = $scripture["book"];
+    $chapter = $scripture["chapter"];
+    $verse = $scripture["verse"];
+    $content_id = $scripture["content_id"];
+
+    $statement = $db->prepare("SELECT * FROM scripture_content WHERE id='$content_id'");
+    $statement->execute();
+
+    $content = $statement->fetch(PDO::FETCH_ASSOC)["content"];
   }
   else {
-    $content_id = "";
+    $content_id = '0';
+    $book = 'None';
+    $chapter = 0;
+    $verse = 0;
+    $content = 'None';
   }
-
-  $scriptures = $db->prepare("SELECT * FROM scripture WHERE content_id='$content_id'");
-  $scriptures->execute();
-  
-  $scripture = $scriptures->fetch(PDO::FETCH_ASSOC);
-  $book = $scripture["book"];
-  $chapter = $scripture["chapter"];
-  $verse = $scripture["verse"];
-  $content_id = $scripture["content_id"];
-
-  $statement = $db->prepare("SELECT * FROM scripture_content WHERE id='$content_id'");
-  $statement->execute();
-
-  $content = $statement->fetch(PDO::FETCH_ASSOC)["content"];
 ?>
 
 <!DOCTYPE html>
