@@ -8,7 +8,7 @@
 
   if (isset($_POST['book'])) {
     $book = $_POST['book'];
-    preg_replace(/[^\w^\s]/, '', $book);
+    preg_replace(/[^\w^\s]/g, '', $book);
   }
   else {
     $book = "";

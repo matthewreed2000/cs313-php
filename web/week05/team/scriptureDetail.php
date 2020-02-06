@@ -8,7 +8,7 @@
 
   if (isset($_GET['content_id'])) {
     $content_id = $_GET['content_id'];
-    preg_replace(/[^\d]/, '', $content_id);
+    preg_replace(/[^\d]/g, '', $content_id);
   }
   else {
     $content_id = "";
