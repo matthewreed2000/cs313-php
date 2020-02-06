@@ -10,9 +10,12 @@
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-    echo "<p>" . $row['name'] . "</p>";
+    $name = $row['name'];
+    $image = $row['image'];
+
+    echo "<p>" . $name . "</p>";
     echo "<img src=\"";
-    echo $row['image'];
+    echo $image;
     echo "\" />";
   }
 ?>
