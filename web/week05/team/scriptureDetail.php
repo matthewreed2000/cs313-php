@@ -13,18 +13,18 @@
     $content_id = "";
   }
 
-  // $scriptures = $db->prepare("SELECT * FROM scripture WHERE book = '$book'");
-  // $scriptures->execute();
+  $scriptures = $db->prepare("SELECT * FROM scripture WHERE content_id=$content_id");
+  $scriptures->execute();
   
-  // $book = $scripture["book"];
-  // $chapter = $scripture["chapter"];
-  // $verse = $scripture["verse"];
-  // $content_id = $scripture["content_id"];
+  $book = $scripture["book"];
+  $chapter = $scripture["chapter"];
+  $verse = $scripture["verse"];
+  $content_id = $scripture["content_id"];
 
-  $statement_content = $db->prepare("SELECT * FROM scripture_content WHERE id=$content_id");
-  $statement_content->execute();
+  $statement = $db->prepare("SELECT * FROM scripture_content WHERE id=$content_id");
+  $statement->execute();
 
-  $content = $statement_content->fetch(PDO::FETCH_ASSOC)["content"];
+  $content = $statement->fetch(PDO::FETCH_ASSOC)["content"];
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +33,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title><!-- <?=$book.' '.$chapter.':'.$verse?> --> - Scripture Detail</title>
+   <title><?=$book.' '.$chapter.':'.$verse?> - Scripture Detail</title>
 </head>
 <body>
-   <h1><!-- <?=$book.' '.$chapter.':'.$verse?> --> - Scripture Detail</h1>
+   <h1><?=$book.' '.$chapter.':'.$verse?> - Scripture Detail</h1>
    <p>"<?=$content?>"</p>
 </body>
 </html>

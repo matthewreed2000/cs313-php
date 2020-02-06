@@ -33,7 +33,7 @@
 
          echo "<a href=\"";
          echo "scriptureDetail.php?content_id=" . $content_id;
-         echo "\"><strong>$book $chapter:$verse</strong></a>";
+         echo "\"><strong>$book $chapter:$verse</strong></a><br>";
       }
 
    ?>
