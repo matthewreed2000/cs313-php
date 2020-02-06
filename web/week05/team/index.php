@@ -31,12 +31,9 @@
          $verse = $row["verse"];
          $content_id = $row["content_id"];
 
-         $statement_content = $db->prepare("SELECT * FROM scripture_content WHERE id=$content_id");
-         $statement_content->execute();
-
-         $content = $statement_content->fetch(PDO::FETCH_ASSOC)["content"];
-
-         echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"</p>";
+         echo "<a href=\"";
+         echo "scriptureDetail.php?content_id=" . $content_id;
+         echo "\"><strong>$book $chapter:$verse</strong></a>";
       }
 
    ?>
