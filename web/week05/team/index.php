@@ -45,9 +45,8 @@
          var xhttp = new XMLHttpRequest();
          xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-               console.log(this.responseText.replace('\n', ''));
                content = document.getElementById('content');
-               var obj = JSON.parse(this.responseText.replace('\n', ''));
+               var obj = JSON.parse(this.responseText);
                content.innerHTML = '';
                obj.forEach(el => {
                   content.innerHTML += "<p><strong>" + el.book + ' '
