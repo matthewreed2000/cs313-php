@@ -16,6 +16,7 @@
   $scriptures = $db->prepare("SELECT * FROM scripture WHERE content_id=$content_id");
   $scriptures->execute();
   
+  $scripture = $scriptures->fetch(PDO::FETCH_ASSOC);
   $book = $scripture["book"];
   $chapter = $scripture["chapter"];
   $verse = $scripture["verse"];
