@@ -1,17 +1,17 @@
 DROP TABLE IF EXISTS scripture;
 DROP TABLE IF EXISTS scripture_content;
 
+CREATE TABLE scripture_content
+( id          SERIAL      NOT NULL PRIMARY KEY
+, content     TEXT        NOT NULL
+);
+
 CREATE TABLE scripture
 ( id          SERIAL      NOT NULL PRIMARY KEY
 , book        VARCHAR(50) NOT NULL
 , chapter     INT         NOT NULL
 , verse       INT         NOT NULL
 , content_id  INT         NOT NULL REFERENCES scripture_content(id)
-);
-
-CREATE TABLE scripture_content
-( id          SERIAL      NOT NULL PRIMARY KEY
-, content     TEXT        NOT NULL
 );
 
 INSERT INTO scripture_content (content)
@@ -34,7 +34,7 @@ VALUES (CONCAT('The light shineth in darkness, and the darkness comprehendeth ',
 INSERT INTO scripture ( book
                       , chapter
                       , verse
-                      , content)
+                      , content_id)
                VALUES ( 'Doctrine and Covenants'
                       , 88
                       , 49
@@ -47,7 +47,7 @@ VALUES (CONCAT('He that keepeth his commandments receiveth truth and light, ',
 INSERT INTO scripture ( book
                       , chapter
                       , verse
-                      , content)
+                      , content_id)
                VALUES ( 'Doctrine and Covenants'
                       , 93
                       , 28
@@ -61,7 +61,7 @@ VALUES (CONCAT('He is the light and the life of the world; yea, a light that is 
 INSERT INTO scripture ( book
                       , chapter
                       , verse
-                      , content)
+                      , content_id)
                VALUES ( 'Mosiah'
                       , 16
                       , 9

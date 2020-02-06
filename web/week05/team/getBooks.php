@@ -20,6 +20,14 @@
 
   echo "[";
   while ($scripRow = $scriptures->fetch(PDO::FETCH_ASSOC)) {
+
+    $content_id = $scripRow["content_id"];
+
+    $statement_content = $db->prepare("SELECT * FROM scripture_content WHERE id=$content_id");
+    $statement_content->execute();
+
+    $content = $statement_content->fetch(PDO::FETCH_ASSOC)["content"];
+
     if ($count > 0) {
       echo ',';
     }
@@ -27,7 +35,7 @@
     echo "\"book\": \"" . $scripRow['book'] . "\",";
     echo "\"chapter\": \"" . $scripRow['chapter'] . "\",";
     echo "\"verse\": \"" . $scripRow['verse'] . "\",";
-    echo "\"content\": \"" . $scripRow['content'] . "\"";
+    echo "\"content\": \"" . $content . "\"";
     echo '}';
     $count = $count + 1;
   }
