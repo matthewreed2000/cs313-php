@@ -24,10 +24,10 @@
       echo ',';
     }
     echo "{";
-    echo "'book': \"" . $scripRow['book'] . "\",";
-    echo "'chapter': \"" . $scripRow['chapter'] . "\",";
-    echo "'verse': \"" . $scripRow['verse'] . "\",";
-    echo "'content': \"" . $scripRow['content'] . "\"";
+    echo "\"book\": \"" . $scripRow['book'] . "\",";
+    echo "\"chapter\": \"" . $scripRow['chapter'] . "\",";
+    echo "\"verse\": \"" . $scripRow['verse'] . "\",";
+    echo "\"content\": \"" . $scripRow['content'] . "\"";
     echo '}';
     $count = $count + 1;
   }
