@@ -35,11 +35,26 @@
       }
 
    ?>
-
-   <form action="getBooks.php" method="POST">
+   <form onsubmit="return requestBook(this);">
    Choose a Book: <input type="text" name="book"><br>
    <input type="submit">
    </form>
+   <div id="content"></div>
+   <script>
+      function requestBook(form) {
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               content = document.getElementById('content');
+               console.log(this.responseText);
+            }
+         };
+         xhttp.open('POST', 'getBooks.php', true);
+         formInfo = form.serialize();
+         xhttp.send(formInfo);
 
+         return false;
+      }
+   </script>
 </body>
 </html>
