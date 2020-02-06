@@ -50,8 +50,8 @@
             }
          };
          xhttp.open('POST', 'getBooks.php', true);
-         formInfo = form.serialize();
-         xhttp.send(formInfo);
+         data = new FormData(form);
+         xhttp.send(data);
 
          return false;
       }
