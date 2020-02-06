@@ -46,7 +46,6 @@
          xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                content = document.getElementById('content');
-               console.log(this.responseText);
                var obj = JSON.parse(this.responseText);
                content.innerHTML = '';
                obj.forEach(el => {
