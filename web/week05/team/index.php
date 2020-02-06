@@ -49,10 +49,11 @@
                console.log(this.responseText);
                var obj = JSON.parse(this.responseText);
                content.innerHTML = '';
-               obj.foreach(element => {
-                  content.innerHTML += "<p><strong>" + obj.book + ' '
-                                    + obj.chapter + ':' + obj.verse
-                                    + "</strong> - \"$content\"</p>";
+               obj.forEach(el => {
+                  content.innerHTML += "<p><strong>" + el.book + ' '
+                                    + el.chapter + ':' + el.verse
+                                    + "</strong> - \"" + el.content 
+                                    + "\"</p>";
                });
             }
          };
