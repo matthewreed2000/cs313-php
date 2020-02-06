@@ -31,5 +31,5 @@
     echo '}';
     $count = $count + 1;
   }
-  echo ']';
+  echo "\n]";
 ?>
