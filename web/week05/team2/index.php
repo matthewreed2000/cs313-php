@@ -11,6 +11,8 @@
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
     echo "<p>" . $row['name'] . "</p>";
-    echo "<img src=\"" . $row['image'] . "\" />";
+    echo "<img src=\"";
+    echo $row['image'];
+    echo "\" />";
   }
 ?>
