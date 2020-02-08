@@ -52,7 +52,7 @@
     }
 
     for($i = 1; $i < $numdays + 1; $i++) {
-      $date = date("Y_m_", $i) . sprintf("%02d", $i);
+      $date = date("Y_m_") . sprintf("%02d", $i);
       echo $date;
       $statement = $db->prepare("
         SELECT t.Title FROM PUBLIC.Task t
@@ -60,6 +60,11 @@
         INNER JOIN PUBLIC.User u ON ut.UserID = u.id
         WHERE u.username = '$username'
         AND ut.SetDate = '$date'");
+      $statement->execute();
+      while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        print_r($row);
+        echo "<br>";
+      }
   ?>
     <p><?=$i?></p>
   <?php } ?>
