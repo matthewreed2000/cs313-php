@@ -41,7 +41,7 @@
 </head>
 <body>
   <?php
-    $maxdate = date('t');
+    $numdays = date('t');
     for($i = 1; $i < $numdays + 1; $i++) {
   ?>
     <p><?=$i?></p>
