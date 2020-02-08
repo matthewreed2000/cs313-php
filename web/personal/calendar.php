@@ -48,7 +48,7 @@
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      echo $row . "<br>";
+      print_r($row);
     }
 
     for($i = 1; $i < $numdays + 1; $i++) {
