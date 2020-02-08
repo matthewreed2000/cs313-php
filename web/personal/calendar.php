@@ -44,7 +44,7 @@
     $numdays = date('t');
     
     $statement = $db->prepare("SELECT SetDate FROM public.UserTask
-      WHERE User_ID=(SELECT ID FROM public.User WHERE username='$username')");
+      WHERE UserID=(SELECT ID FROM public.User WHERE username='$username')");
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
