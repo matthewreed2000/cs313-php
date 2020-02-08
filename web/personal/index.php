@@ -32,7 +32,12 @@
       $statement->execute();
 
       $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
-      echo $dbPass;
+      if ($password == $dbPass) {
+        echo 'LOGIN SUCCESSFUL';
+      }
+      else {
+        $show_error = true;
+      }
     }
   ?>
   <form action="#" method="POST">
