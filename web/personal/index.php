@@ -33,7 +33,8 @@
 
       $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
       if ($password == $dbPass) {
-        echo 'LOGIN SUCCESSFUL';
+        header("Location: calendar.php", true, 301);
+        exit();
       }
       else {
         $show_error = true;
