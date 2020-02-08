@@ -32,9 +32,9 @@
       echo $dbPass;
     }
   ?>
-  <form action="" method="POST">
-    <input type="username" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
+  <form action="#" method="POST">
+    <input type="username" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
     <button type="submit">Log In</button>
   </form>
   <?php if ($show_error) { ?>
