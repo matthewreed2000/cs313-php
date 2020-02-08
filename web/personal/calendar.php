@@ -48,7 +48,7 @@
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      print_r($row);
+      echo $row['setdate'] . '<br>';
     }
 
     for($i = 1; $i < $numdays + 1; $i++) {
