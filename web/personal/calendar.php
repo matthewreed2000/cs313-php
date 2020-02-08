@@ -41,7 +41,7 @@
 </head>
 <body>
   <?php
-    for($i = 0; i < cal_days_in_month(CAL_GREGORIAN, 2, 2020); $i++) {
+    for($i = 0; $i < cal_days_in_month(CAL_GREGORIAN, 2, 2020); $i++) {
   ?>
     <p><?=$i?></p>
   <?php } ?>
