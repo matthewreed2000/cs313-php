@@ -52,7 +52,7 @@
     }
 
     for($i = 1; $i < $numdays + 1; $i++) {
-      $date = date("Y_M_D", $i);
+      $date = date("Y_m_", $i) . sprintf("%2d", $i);
       echo $date;
       $statement = $db->prepare("
         SELECT t.Title FROM PUBLIC.Task t
