@@ -53,6 +53,7 @@
       $statement->execute();
       echo $statement->fetch(PDO::FETCH_ASSOC)['displayname'];
     ?>'s Calendar</h1>
+    <div class="circleButton"><a href="addTask.php">+</a></div>
     <div class="calendarHolder">
       <div><p><b>Sunday</b></p></div>
       <div><p><b>Monday</b></p></div>

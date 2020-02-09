@@ -39,8 +39,8 @@ p {
 }
 
 #content-wrap {
-  padding-top: calc(2.5vw + 2.5px);;
-  padding-bottom: calc(2.5vw + 2.5px);;
+  padding-top: calc(2.5vw + 2.5px);
+  padding-bottom: calc(2.5vw + 2.5px);
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-dark-color);
