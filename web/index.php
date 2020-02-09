@@ -23,7 +23,7 @@
           <img src="img/assignment.jpg" alt="A person studying or working on homework" />
           <p>Assignments</p>
         </a>
-        <a href="#">
+        <a href="personal">
           <img src="img/glowing-electronics.jpg" alt="A circuit with glowing components" />
           <p>Personal Project</p>
         </a>
