@@ -44,7 +44,7 @@
   <?php for($i = 1; $i < 7; $i++) { ?>
     <div>
       <?php
-        echo date('D',$i);
+        echo date('D',$i * 24 * 60);
       ?>
     </div>
   <?php } ?>
