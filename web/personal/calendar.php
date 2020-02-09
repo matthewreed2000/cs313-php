@@ -41,10 +41,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Calendar</title>
-  <link rel="stylesheet" href="../css/calendar.css">
+  <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="css/calendar.css">
 </head>
 <body>
+  <header class="header"></header>
   <div class="content">
     <h1><?php
       $statement = $db->prepare("SELECT DisplayName FROM public.User
@@ -53,13 +54,13 @@
       echo $statement->fetch(PDO::FETCH_ASSOC)['displayname'];
     ?>'s Calendar</h1>
     <div class="calendarHolder">
-      <div><b>Sunday</b></div>
-      <div><b>Monday</b></div>
-      <div><b>Tuesday</b></div>
-      <div><b>Wednesday</b></div>
-      <div><b>Thursday</b></div>
-      <div><b>Friday</b></div>
-      <div><b>Saturday</b></div>
+      <div><p><b>Sunday</b></p></div>
+      <div><p><b>Monday</b></p></div>
+      <div><p><b>Tuesday</b></p></div>
+      <div><p><b>Wednesday</b></p></div>
+      <div><p><b>Thursday</b></p></div>
+      <div><p><b>Friday</b></p></div>
+      <div><p><b>Saturday</b></p></div>
       <?php
         $firstDayOfWeek = date('w', strtotime('-'. date('d', time()-24*60*60) .' days'));
 
@@ -90,5 +91,6 @@
       <?php } ?>
     </div>
   </div>
+  <footer class="footer"></footer>
 </body>
 </html>
