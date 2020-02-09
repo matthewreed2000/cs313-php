@@ -1,4 +1,4 @@
-* {
+/** {
   box-sizing: border-box;
 }
 
@@ -9,13 +9,13 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
+}*/
+/*
 .content {
   height: calc(100% - 50px);
   width: 100%;
 }
-
+*/
 .calendarHolder {
   height: 100%;
   display: grid;
@@ -34,7 +34,7 @@ html, body {
 .calendarHolder > .spacer {
   border-color: #666666;
 }
-
+/*
 a {
   color: #99ffff;
   text-decoration: none;
@@ -42,4 +42,4 @@ a {
 
 p {
   margin: 0;
-}
+}*/
