@@ -46,7 +46,7 @@
 </head>
 <body>
   <header class="header"></header>
-  <div class="content">
+  <main class="content">
     <h1><?php
       $statement = $db->prepare("SELECT DisplayName FROM public.User
         WHERE username='$username'");
@@ -90,7 +90,7 @@
         </div>
       <?php } ?>
     </div>
-  </div>
+  </main>
   <footer class="footer"></footer>
 </body>
 </html>

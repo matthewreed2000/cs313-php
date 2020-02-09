@@ -18,6 +18,7 @@
 <html>
 <head>
   <title>Log In</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
   <?php
