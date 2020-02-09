@@ -63,7 +63,7 @@
 </head>
 <body>
   <?php
-    $statement = $db->prepare("SELECT * FROM PUBLIC.Task WHERE ID=$_GET['id']");
+    // $statement = $db->prepare("SELECT * FROM PUBLIC.Task WHERE ID=$_GET['id']");
   ?>
 </body>
 </html>
