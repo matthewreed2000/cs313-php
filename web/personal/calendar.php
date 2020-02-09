@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="css/calendar.css">
 </head>
 <body>
-  <header class="header"></header>
-  <main class="content">
+  <header id="header"></header>
+  <main id="content-wrap">
     <h1><?php
       $statement = $db->prepare("SELECT DisplayName FROM public.User
         WHERE username='$username'");
@@ -91,6 +91,6 @@
       <?php } ?>
     </div>
   </main>
-  <footer class="footer"></footer>
+  <footer id="footer"></footer>
 </body>
 </html>

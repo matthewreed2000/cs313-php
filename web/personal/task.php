@@ -63,12 +63,14 @@
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-  <?php if (isset($info)) { ?>
-    <h1><?=$info['title']?></h1>
-    <p><?=$info['description']?></p>
-  <?php } else { ?>
-    <p>You are not allowed to view this task</p>
-    <a href="calendar.php">Return to Calendar</a>
-  <?php } ?>
+  <main id="content-wrap">
+    <?php if (isset($info)) { ?>
+      <h1><?=$info['title']?></h1>
+      <p><?=$info['description']?></p>
+    <?php } else { ?>
+      <p>You are not allowed to view this task</p>
+      <a href="calendar.php">Return to Calendar</a>
+    <?php } ?>
+  </main>
 </body>
 </html>
