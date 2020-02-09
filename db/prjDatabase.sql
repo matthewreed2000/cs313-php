@@ -60,16 +60,40 @@ VALUES ('ree18008', 'password', 'Matthew Reed');
 INSERT INTO public.User (username, password, displayname)
 VALUES ('brobirch', '123456', 'Bro Birch');
 
-INSERT INTO public.Task (title)
-VALUES ('Test task');
-
 -- This would be weekly on thursdays until March 03
 INSERT INTO public.Repeat (Pattern, EndDate)
-VALUES ('wR', '2020-03-03');
+VALUES ('wR', '2020_03_03');
+
+INSERT INTO public.Task (title)
+VALUES ('Matthew`s Task');
+
+INSERT INTO public.Task (title)
+VALUES ('Test Task');
+
+INSERT INTO public.Task (title, Description)
+VALUES ('Test Task Desc', 'This is a description');
 
 -- This would be from 8:00 AM to 8:00 PM
 INSERT INTO public.Task (Title, Description, StartTime, EndTime)
-VALUES ('Task Thing', 'This is a test task also', 480, 1200);
+VALUES ('Test Task Time', 'This is a test with a start and end time', 480, 1200);
+
+INSERT INTO public.Task (Title, Description, RepeatID)
+VALUES ('Test Task Repeat', 'This should repeat', 1);
+
+INSERT INTO public.Task (title, Description, EndDateOffset, StartTime, EndTime, Priority, RepeatID)
+VALUES ('Test Task All', 'This is all the things', 1, 0, 120, 10, 1);
 
 INSERT INTO public.UserTask (UserId, TaskID)
 VALUES (1, 2);
+
+INSERT INTO public.UserTask (UserId, TaskID)
+VALUES (2, 1);
+
+INSERT INTO public.UserTask (UserId, TaskID, SetDate)
+VALUES (1, 3, '2020_02_26');
+
+INSERT INTO public.UserTask (UserId, TaskID, SetDate)
+VALUES (1, 4, '2020_02_15');
+
+INSERT INTO public.UserTask (UserId, TaskID, SetDate)
+VALUES (1, 5, '2020_02_19');

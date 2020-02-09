@@ -41,6 +41,11 @@
   <title>Calendar</title>
 </head>
 <body>
+  <?php for ($i = 0; $i < 7; i++) { ?>
+    <div>
+      <?=date('D',$i)?>
+    </div>
+  <?php } ?>
   <?php
     $numdays = date('t');
     
