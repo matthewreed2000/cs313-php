@@ -44,7 +44,7 @@
   <?php for($i = 1; $i < 7; $i++) { ?>
     <div>
       <?php
-        // echo date('l',$i);
+        echo date('D',$i);
       ?>
     </div>
   <?php } ?>
