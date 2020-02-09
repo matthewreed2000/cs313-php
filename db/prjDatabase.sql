@@ -52,6 +52,9 @@ CREATE TABLE PUBLIC.UserTask (
 
 -- Testing Some Values
 INSERT INTO public.User (username, password, displayname)
+VALUES ('test', 'test123', 'Test User');
+
+INSERT INTO public.User (username, password, displayname)
 VALUES ('ree18008', 'password', 'Matthew Reed');
 
 INSERT INTO public.User (username, password, displayname)

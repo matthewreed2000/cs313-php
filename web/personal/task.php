@@ -21,10 +21,11 @@
     exit();
   }
 
-  if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+  if (isset($_SESSION['frozen_waters_username'])
+    && isset($_SESSION['frozen_waters_password'])) {
     // Get user login info when page loads
-    $username = sanitizeSession($_SESSION['username']);
-    $password = sanitizeSession($_SESSION['password']);
+    $username = sanitizeSession($_SESSION['frozen_waters_username']);
+    $password = sanitizeSession($_SESSION['frozen_waters_password']);
 
     // If the login info is wrong, return the user to the login page
     $statement = $db->prepare("SELECT password FROM public.User
@@ -48,7 +49,6 @@
         AND t.id = '$id'");
       $statement->execute();
       $info = $statement->fetch(PDO::FETCH_ASSOC);
-      print_r($info);
     }
   }
   else {

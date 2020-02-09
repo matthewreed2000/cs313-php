@@ -31,8 +31,8 @@
 
       $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
       if ($password == $dbPass) {
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
+        $_SESSION['frozen_waters_username'] = $username;
+        $_SESSION['frozen_waters_password'] = $password;
 
         header("Location: calendar.php", true, 301);
         exit();
@@ -47,6 +47,7 @@
     <input type="password" name="password" placeholder="Password" required>
     <button type="submit">Log In</button>
   </form>
+  <p>For testing purposes, use the username "test" and the password "test123"</p>
   <?php if ($show_error) { ?>
     <p>Incorrect username or password</p>
   <?php } ?>

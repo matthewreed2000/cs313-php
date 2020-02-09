@@ -17,9 +17,10 @@
     exit();
   }
 
-  if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
-    $username = sanitizeSession($_SESSION['username']);
-    $password = sanitizeSession($_SESSION['password']);
+  if (isset($_SESSION['frozen_waters_username'])
+    && isset($_SESSION['frozen_waters_password'])) {
+    $username = sanitizeSession($_SESSION['frozen_waters_username']);
+    $password = sanitizeSession($_SESSION['frozen_waters_password']);
 
     $statement = $db->prepare("SELECT password FROM public.User
       WHERE username='$username'");
