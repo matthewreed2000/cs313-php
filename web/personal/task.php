@@ -41,7 +41,7 @@
     if (isset($_GET['id'])) {
       $id = sanitizeInput($_GET['id']);
       $statement = $db->prepare("
-        SELECT * FROM PUBLIC.Task t
+        SELECT t.* FROM PUBLIC.Task t
         INNER JOIN PUBLIC.UserTask ut ON t.id = ut.TaskID
         INNER JOIN PUBLIC.User u ON ut.UserID = u.id
         WHERE u.username = '$username'
