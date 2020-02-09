@@ -43,13 +43,13 @@
   <?php
     $numdays = date('t');
     
-    $statement = $db->prepare("SELECT SetDate FROM public.UserTask
-      WHERE UserID=(SELECT ID FROM public.User WHERE username='$username')");
-    $statement->execute();
+    // $statement = $db->prepare("SELECT SetDate FROM public.UserTask
+    //   WHERE UserID=(SELECT ID FROM public.User WHERE username='$username')");
+    // $statement->execute();
 
-    while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      echo $row['setdate'] . '<br>';
-    }
+    // while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    //   echo $row['setdate'] . '<br>';
+    // }
 
     for($i = 1; $i < $numdays + 1; $i++) {
   ?>
