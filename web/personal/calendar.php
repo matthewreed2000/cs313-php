@@ -43,7 +43,9 @@
 <body>
   <?php for ($i = 0; $i < 7; i++) { ?>
     <div>
-      <?=date('D',$i)?>
+      <?php
+        echo date('D',$i);
+      ?>
     </div>
   <?php } ?>
   <?php
