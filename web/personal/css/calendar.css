@@ -1,3 +1,7 @@
+body {
+  background-color: #333333;
+}
+
 .calendarHolder {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
