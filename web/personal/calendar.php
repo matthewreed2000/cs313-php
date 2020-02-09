@@ -44,14 +44,20 @@
   <link rel="stylesheet" href="css/calendar.css">
 </head>
 <body>
+  <h1><?php
+    $statement = $db->prepare("SELECT DisplayName FROM public.User
+      WHERE username='$username'");
+    $statement->execute();
+    echo $statement->fetch(PDO::FETCH_ASSOC)['displayname'];
+  ?></h1>
   <div class="calendarHolder">
-    <div><p>Sunday</p></div>
-    <div><p>Monday</p></div>
-    <div><p>Tuesday</p></div>
-    <div><p>Wednesday</p></div>
-    <div><p>Thursday</p></div>
-    <div><p>Friday</p></div>
-    <div><p>Saturday</p></div>
+    <div><b>Sunday</b></div>
+    <div><b>Monday</b></div>
+    <div><b>Tuesday</b></div>
+    <div><b>Wednesday</b></div>
+    <div><b>Thursday</b></div>
+    <div><b>Friday</b></div>
+    <div><b>Saturday</b></div>
     <?php
       $firstDayOfWeek = date('w', strtotime('-'. date('d', time()-24*60*60) .' days'));
 
