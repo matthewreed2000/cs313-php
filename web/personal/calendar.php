@@ -41,13 +41,13 @@
   <title>Calendar</title>
 </head>
 <body>
-  <?php for($i = 1; $i < 7; $i++) { ?>
-    <div>
-      <?php
-        echo date('W',$i);
-      ?>
-    </div>
-  <?php } ?>
+  <div><p>Sunday</p></div>
+  <div><p>Monday</p></div>
+  <div><p>Tuesday</p></div>
+  <div><p>Wednesday</p></div>
+  <div><p>Thursday</p></div>
+  <div><p>Friday</p></div>
+  <div><p>Saturday</p></div>
   <?php
     $numdays = date('t');
     
