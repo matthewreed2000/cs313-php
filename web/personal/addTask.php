@@ -44,14 +44,18 @@
   <title>Add Task</title>
 </head>
 <body>
-  <form action="" method="POST">
-    <input type="text" name="title">
-    <input type="text" name="desc">
-    <input type="datetime-local" name="starttime">
-    <input type="datetime-local" name="endtime">
-    <input type="text" name="repeat">
-    <input type="text" name="priority">
-    <button type="submit">Add Task</button>
-  </form>
+  <main id="content-wrapper">
+    <div class="jumbotron">
+      <form action="" method="POST">
+        <input type="text" name="title">
+        <input type="text" name="desc">
+        <input type="datetime-local" name="starttime">
+        <input type="datetime-local" name="endtime">
+        <input type="text" name="repeat">
+        <input type="text" name="priority">
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
