@@ -64,13 +64,15 @@
 </head>
 <body>
   <main id="content-wrap">
-    <?php if (isset($info)) { ?>
-      <h1><?=$info['title']?></h1>
-      <p><?=$info['description']?></p>
-    <?php } else { ?>
-      <p>You are not allowed to view this task</p>
-      <a href="calendar.php">Return to Calendar</a>
-    <?php } ?>
+    <div class="jumbotron">
+      <?php if (isset($info)) { ?>
+        <h1><?=$info['title']?></h1>
+        <p><?=$info['description']?></p>
+      <?php } else { ?>
+        <p>You are not allowed to view this task</p>
+        <a href="calendar.php">Return to Calendar</a>
+      <?php } ?>
+    </div>
   </main>
 </body>
 </html>
