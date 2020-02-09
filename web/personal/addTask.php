@@ -42,6 +42,7 @@
 <html>
 <head>
   <title>Add Task</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
   <main id="content-wrapper">
