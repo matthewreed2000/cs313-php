@@ -1,9 +1,40 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   background-color: #333333;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .calendarHolder {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 1.5em, repeat(6, 1fr);
+  grid-template-rows: 1.5em repeat(6, 1fr);
+}
+
+.calendarHolder > div {
+  border-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #444444;
+}
+
+.calendarHolder > .spacer {
+  border-color: #666666;
+}
+
+a {
+  color: #99ffff;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
 }
