@@ -44,57 +44,50 @@
   <link rel="stylesheet" href="css/calendar.css">
 </head>
 <body>
-  <h1><?php
-    $statement = $db->prepare("SELECT DisplayName FROM public.User
-      WHERE username='$username'");
-    $statement->execute();
-    echo $statement->fetch(PDO::FETCH_ASSOC)['displayname'];
-  ?></h1>
-  <div class="calendarHolder">
-    <div><b>Sunday</b></div>
-    <div><b>Monday</b></div>
-    <div><b>Tuesday</b></div>
-    <div><b>Wednesday</b></div>
-    <div><b>Thursday</b></div>
-    <div><b>Friday</b></div>
-    <div><b>Saturday</b></div>
-    <?php
-      $firstDayOfWeek = date('w', strtotime('-'. date('d', time()-24*60*60) .' days'));
+  <div class="content">
+    <h1><?php
+      $statement = $db->prepare("SELECT DisplayName FROM public.User
+        WHERE username='$username'");
+      $statement->execute();
+      echo $statement->fetch(PDO::FETCH_ASSOC)['displayname'];
+    ?>'s Calendar</h1>
+    <div class="calendarHolder">
+      <div><b>Sunday</b></div>
+      <div><b>Monday</b></div>
+      <div><b>Tuesday</b></div>
+      <div><b>Wednesday</b></div>
+      <div><b>Thursday</b></div>
+      <div><b>Friday</b></div>
+      <div><b>Saturday</b></div>
+      <?php
+        $firstDayOfWeek = date('w', strtotime('-'. date('d', time()-24*60*60) .' days'));
 
-      for ($i = 0; $i < $firstDayOfWeek; $i++) {
-    ?>
-      <div class="spacer"></div>
-    <?php } ?>
-    <?php
-      $numdays = date('t');
-      
-      // $statement = $db->prepare("SELECT SetDate FROM public.UserTask
-      //   WHERE UserID=(SELECT ID FROM public.User WHERE username='$username')");
-      // $statement->execute();
-
-      // while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      //   echo $row['setdate'] . '<br>';
-      // }
-
-      for($i = 1; $i < $numdays + 1; $i++) {
-    ?>
-      <div>
-        <p><?=$i?></p>
-        <?php
-          $date = date("Y_m_") . sprintf("%02d", $i);
-          $statement = $db->prepare("
-            SELECT t.ID, t.Title FROM PUBLIC.Task t
-            INNER JOIN PUBLIC.UserTask ut ON t.id = ut.TaskID
-            INNER JOIN PUBLIC.User u ON ut.UserID = u.id
-            WHERE u.username = '$username'
-            AND ut.SetDate = '$date'");
-          $statement->execute();
-          while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        ?>
-          <a href="task.php?id=<?=$row['id']?>"><?=$row['title']?></a>
-        <?php } ?>
-      </div>
-    <?php } ?>
+        for ($i = 0; $i < $firstDayOfWeek; $i++) {
+      ?>
+        <div class="spacer"></div>
+      <?php } ?>
+      <?php
+        $numdays = date('t');
+        for($i = 1; $i < $numdays + 1; $i++) {
+      ?>
+        <div>
+          <p><?=$i?></p>
+          <?php
+            $date = date("Y_m_") . sprintf("%02d", $i);
+            $statement = $db->prepare("
+              SELECT t.ID, t.Title FROM PUBLIC.Task t
+              INNER JOIN PUBLIC.UserTask ut ON t.id = ut.TaskID
+              INNER JOIN PUBLIC.User u ON ut.UserID = u.id
+              WHERE u.username = '$username'
+              AND ut.SetDate = '$date'");
+            $statement->execute();
+            while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+          ?>
+            <a href="task.php?id=<?=$row['id']?>"><?=$row['title']?></a>
+          <?php } ?>
+        </div>
+      <?php } ?>
+    </div>
   </div>
 </body>
 </html>
