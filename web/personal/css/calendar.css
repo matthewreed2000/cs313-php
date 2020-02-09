@@ -51,12 +51,13 @@
 }
 
 .circleButton {
+  display: inline-block;
   font-size: calc(3vw + 3px);
   background-color: var(--tertiary-bg-color);
-  color: var(--tertiary-text-color);
   border-radius: 3vw;
 }
 
 .circleButton a {
   text-decoration: none;
+  color: var(--tertiary-text-color);
 }
