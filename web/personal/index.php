@@ -42,7 +42,7 @@
       }
     }
   ?>
-  <form action="#" method="POST">
+  <form action="" method="POST">
     <input type="username" name="username" placeholder="Username" required>
     <input type="password" name="password" placeholder="Password" required>
     <button type="submit">Log In</button>
