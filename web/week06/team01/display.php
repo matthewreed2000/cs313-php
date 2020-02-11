@@ -3,11 +3,11 @@
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
 
-	require("dbConnect.php");
-	$db = get_db();
+  require("dbConnect.php");
+  $db = get_db();
 ?>
-	<body>
-		<div class="container">
+  <body>
+    <div class="container">
          <?php
             $personId = $_GET['personId'];
             $statement = $db->prepare('SELECT * FROM w6_user WHERE Id = :personId');
@@ -35,6 +35,6 @@
             // display name and favorite food
          ?>
 
-		</div>
-	</body>
+    </div>
+  </body>
 </html>
