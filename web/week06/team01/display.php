@@ -10,7 +10,7 @@
 		<div class="container">
          <?php
             $personId = $_GET['personId'];
-            $statement = $db->prepare("SELECT * FROM w6_user WHERE Id = :personId");
+            $statement = $db->prepare('SELECT * FROM w6_user WHERE Id = :personId');
             $statement->bindValue(':personId', $personId);
             $statement->execute();
 
@@ -21,7 +21,7 @@
               $last = $row['last_name'];
               $food_id = $row['food_type'];
 
-              $foods = $db->prepare("SELECT * FROM w6_food WHERE Id = :food_id");
+              $foods = $db->prepare('SELECT * FROM w6_food WHERE Id = :food_id');
               $foods->bindValue(':food_id', $food_id);
               $foods->execute();
               while ($food_row = $statement->fetch(PDO::FETCH_ASSOC)) {
