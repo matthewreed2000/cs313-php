@@ -59,8 +59,8 @@
 
       echo $stmnt->fetch(PDO::FETCH_ASSOC)['id'];
 
-      header("Location: calendar.php", true, 301);
-      exit();
+      // header("Location: calendar.php", true, 301);
+      // exit();
     }
   }
 ?>
