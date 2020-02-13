@@ -55,9 +55,11 @@
       $stmnt->bindValue(':title', $title);
       $stmnt->bindValue(':descr', $descr);
 
-      $stmnt->execute;
+      $stmnt->execute();
 
-      echo $stmnt->fetch(PDO::FETCH_ASSOC)['id'];
+      if ($id = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
+        echo $id;
+      }
 
       // header("Location: calendar.php", true, 301);
       // exit();
