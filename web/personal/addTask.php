@@ -57,12 +57,26 @@
 
       $stmnt->execute();
 
-      if ($id = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
-        echo $id;
+      if ($taskid = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
+        $query = 'SELECT id FROM PUBLIC.User WHERE username=:username';
+        $stmnt = $db->prepare($query);
+        $stmnt->bindValue(':username', $username);
+        $stmnt->execute();
+
+        if ($userid = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
+          $query = 'INSERT INTO PUBLIC.UserTask(UserID, TaskID)
+            VALUES (:userid, :taskid)';
+            
+          $stmnt = $db->prepare($query);
+          $stmnt->bindValue(':taskid', $taskid);
+          $stmnt->bindValue(':userid', $userid);
+
+          $stmnt->execute();
+        }
       }
 
-      // header("Location: calendar.php", true, 301);
-      // exit();
+      header("Location: calendar.php", true, 301);
+      exit();
     }
   }
 ?>
