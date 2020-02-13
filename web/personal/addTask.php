@@ -66,7 +66,7 @@
         if ($userid = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
           $query = 'INSERT INTO PUBLIC.UserTask(UserID, TaskID)
             VALUES (:userid, :taskid)';
-            
+
           $stmnt = $db->prepare($query);
           $stmnt->bindValue(':taskid', $taskid);
           $stmnt->bindValue(':userid', $userid);
@@ -93,8 +93,10 @@
       <form action="" method="POST">
         <input type="text" name="title">
         <input type="text" name="descr">
-        <input type="datetime-local" name="starttime">
-        <input type="datetime-local" name="endtime">
+        <input type="date" name="startdate">
+        <input type="time-local" name="starttime">
+        <input type="date" name="enddate">
+        <input type="time-local" name="endtime">
         <input type="text" name="repeat">
         <input type="text" name="priority">
         <button type="submit">Add Task</button>
