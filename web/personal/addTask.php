@@ -7,9 +7,13 @@
   require "../modules/dbConnect.php";
   $db = get_db();
 
-  function sanitizeSession($input) {
+  function sanitizeInput($input) {
     // TODO
     return $input;
+  }
+
+  function sanitizeSession($input) {
+    return sanitizeInput($input);
   }
 
   function returnToLogin() {
@@ -36,6 +40,29 @@
   }
 
   // Will add task if POST exists
+  if (isset($_POST)) {
+    // TODO
+    $validForm = isset($_POST['title']) &&
+                 isset($_POST['descr']);
+    if ($validForm) {
+      $title = sanitizeInput($_POST['title']);
+      $descr = sanitizeInput($_POST['descr']);
+
+      $query = 'INSERT INTO PUBLIC.task(Title, Description)
+        VALUES (:title, :descr) RETURNING id';
+      
+      $stmnt = $db->prepare($query);
+      $stmnt->bindValue(':title', $title);
+      $stmnt->bindValue(':descr', $descr);
+
+      $stmnt->execute;
+
+      echo $stmnt->fetch(PDO::FETCH_ASSOC)['id'];
+
+      header("Location: calendar.php", true, 301);
+      exit();
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +76,7 @@
     <div class="jumbotron">
       <form action="" method="POST">
         <input type="text" name="title">
-        <input type="text" name="desc">
+        <input type="text" name="descr">
         <input type="datetime-local" name="starttime">
         <input type="datetime-local" name="endtime">
         <input type="text" name="repeat">
