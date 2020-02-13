@@ -70,8 +70,8 @@
         <p><?=$info['description']?></p>
       <?php } else { ?>
         <p>You are not allowed to view this task</p>
-        <a href="calendar.php">Return to Calendar</a>
       <?php } ?>
+      <a href="calendar.php">Return to Calendar</a>
     </div>
   </main>
 </body>
