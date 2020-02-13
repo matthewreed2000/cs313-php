@@ -53,6 +53,7 @@
 .circleButton {
   display: inline-block;
   font-size: calc(3vw + 3px);
+  text-align: center;
   width: calc(3vw + 3px);
   height: calc(3vw + 3px);
   background-color: var(--tertiary-bg-color);
