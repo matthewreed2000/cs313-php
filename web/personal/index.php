@@ -28,7 +28,7 @@
           $username = sanitizeInput($_POST['username']);
           $password = sanitizeInput($_POST['password']);
 
-          $statement = $db->prepare("SELECT password FROM public.User
+          $statement = $db->prepare("SELECT password FROM UserData
             WHERE username='$username'");
           $statement->execute();
 

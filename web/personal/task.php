@@ -28,7 +28,7 @@
     $password = sanitizeSession($_SESSION['frozen_waters_password']);
 
     // If the login info is wrong, return the user to the login page
-    $statement = $db->prepare("SELECT password FROM public.User
+    $statement = $db->prepare("SELECT password FROM UserData
       WHERE username='$username'");
     $statement->execute();
 
@@ -42,9 +42,9 @@
     if (isset($_GET['id'])) {
       $id = sanitizeInput($_GET['id']);
       $statement = $db->prepare("
-        SELECT t.* FROM PUBLIC.Task t
-        INNER JOIN PUBLIC.UserTask ut ON t.id = ut.TaskID
-        INNER JOIN PUBLIC.User u ON ut.UserID = u.id
+        SELECT t.* FROM Task t
+        INNER JOIN UserTask ut ON t.id = ut.TaskID
+        INNER JOIN UserData u ON ut.UserID = u.id
         WHERE u.username = '$username'
         AND t.id = '$id'");
       $statement->execute();

@@ -22,7 +22,7 @@
     $username = sanitizeSession($_SESSION['frozen_waters_username']);
     $password = sanitizeSession($_SESSION['frozen_waters_password']);
 
-    $statement = $db->prepare("SELECT password FROM public.User
+    $statement = $db->prepare("SELECT password FROM UserData
       WHERE username='$username'");
     $statement->execute();
 
@@ -48,7 +48,7 @@
   <header id="header"></header>
   <main id="content-wrap">
     <h1><?php
-      $statement = $db->prepare("SELECT DisplayName FROM public.User
+      $statement = $db->prepare("SELECT DisplayName FROM UserData
         WHERE username='$username'");
       $statement->execute();
       echo $statement->fetch(PDO::FETCH_ASSOC)['displayname'];
@@ -78,11 +78,11 @@
           <?php
             $date = date("Y_m_") . sprintf("%02d", $i);
             $statement = $db->prepare("
-              SELECT t.ID, t.Title FROM PUBLIC.Task t
-              INNER JOIN PUBLIC.UserTask ut ON t.id = ut.TaskID
-              INNER JOIN PUBLIC.User u ON ut.UserID = u.id
+              SELECT t.ID, t.Title FROM Task t
+              INNER JOIN UserTask ut ON t.id = ut.TaskID
+              INNER JOIN UserData u ON ut.UserID = u.id
               WHERE u.username = '$username'
-              AND ut.SetDate = '$date'");
+              AND t.SetDate = '$date'");
             $statement->execute();
             while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
           ?>

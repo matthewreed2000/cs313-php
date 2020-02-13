@@ -26,7 +26,7 @@
     $username = sanitizeSession($_SESSION['frozen_waters_username']);
     $password = sanitizeSession($_SESSION['frozen_waters_password']);
 
-    $statement = $db->prepare("SELECT password FROM public.User
+    $statement = $db->prepare("SELECT password FROM UserData
       WHERE username='$username'");
     $statement->execute();
 
@@ -48,7 +48,7 @@
       $title = sanitizeInput($_POST['title']);
       $descr = sanitizeInput($_POST['descr']);
 
-      $query = 'INSERT INTO PUBLIC.task(Title, Description)
+      $query = 'INSERT INTO Task(Title, Description)
         VALUES (:title, :descr) RETURNING id';
       
       $stmnt = $db->prepare($query);
@@ -58,13 +58,13 @@
       $stmnt->execute();
 
       if ($taskid = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
-        $query = 'SELECT id FROM PUBLIC.User WHERE username=:username';
+        $query = 'SELECT id FROM UserData WHERE username=:username';
         $stmnt = $db->prepare($query);
         $stmnt->bindValue(':username', $username);
         $stmnt->execute();
 
         if ($userid = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
-          $query = 'INSERT INTO PUBLIC.UserTask(UserID, TaskID)
+          $query = 'INSERT INTO UserTask(UserID, TaskID)
             VALUES (:userid, :taskid)';
 
           $stmnt = $db->prepare($query);
@@ -94,9 +94,9 @@
         <input type="text" name="title">
         <input type="text" name="descr">
         <input type="date" name="startdate">
-        <input type="time-local" name="starttime">
+        <input type="time" name="starttime">
         <input type="date" name="enddate">
-        <input type="time-local" name="endtime">
+        <input type="time" name="endtime">
         <input type="text" name="repeat">
         <input type="text" name="priority">
         <button type="submit">Add Task</button>
