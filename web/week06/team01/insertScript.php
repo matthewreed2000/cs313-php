@@ -7,9 +7,15 @@
    $verse = $_POST['verse'];
    $content = $_POST['content'];
    $topics = $_POST['ckTopics'];
+   // $newTopic = $_POST['ckTopicNew'];
+   // $newValue = $_POST['newTopicName'];
 
    try
    {
+      // if (isset($newTopic)) {
+      //    $newQuery = 'INSERT INTO topic(name) VALUES (:newValue)';
+      // }
+
       $query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
       $stmt = $db->prepare($query);
 

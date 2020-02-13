@@ -40,7 +40,7 @@
                $id = $row['id'];
                $name = $row['name'];
                
-               echo "<input type='checkbox' name='ckTopics[]' id='ckTopics$id' value='$id'>";
+               echo "<input type='checkbox' name='ckTopics' id='ckTopics$id' value='$id'>";
                echo "<label for='ckTopics$id'>$name</label>";
                echo "\n";
             }
@@ -52,6 +52,8 @@
          }
       ?>
       <br><br>
+      <input type='checkbox' name='ckTopicNew' value='true'>
+      <input type='text' name='newTopicName'>
       <input type="submit" value="Add Scripture">
    </form>
 </body>
