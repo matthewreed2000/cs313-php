@@ -86,7 +86,7 @@
             $statement->execute();
             while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
           ?>
-            <a href="task.php?id=<?=$row['id']?>"><?=$row['title']?></a>
+            <a href="task.php?id=<?=$row['id']?>"><?=$row['title']?></a><br>
           <?php } ?>
         </div>
       <?php } ?>
