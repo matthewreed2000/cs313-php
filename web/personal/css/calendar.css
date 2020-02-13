@@ -53,8 +53,10 @@
 .circleButton {
   display: inline-block;
   font-size: calc(3vw + 3px);
+  width: calc(3vw + 3px);
+  height: calc(3vw + 3px);
   background-color: var(--tertiary-bg-color);
-  border-radius: 3vw;
+  border-radius: 50%;
 }
 
 .circleButton a {
