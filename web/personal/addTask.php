@@ -42,8 +42,8 @@
   // Will add task if POST exists
   if (isset($_POST)) {
     // TODO
-    $validForm = isset($_POST['title']) &&
-                 isset($_POST['descr']);
+    $validForm = isset($_POST['title']) ? !isempty($_POST['title']) : 0 &&
+                 isset($_POST['descr']) ? !isempty($_POST['descr']) : 0;
     if ($validForm) {
       $title = sanitizeInput($_POST['title']);
       $descr = sanitizeInput($_POST['descr']);
