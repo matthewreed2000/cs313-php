@@ -75,6 +75,8 @@ p {
 
 #footer {
   position: absolute;
+  display: flex;
+  flex-flow: row wrap;
   bottom: 0;
   width: 100%;
   height: calc(2.5vw + 2.5px);
@@ -86,6 +88,10 @@ p {
 
 #footer p {
   margin-top: calc(0.75vw + 0.75px);
+}
+
+#footer a {
+  color: var(--footer-text-color);
 }
 
 .jumbotron {
