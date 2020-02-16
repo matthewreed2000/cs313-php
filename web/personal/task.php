@@ -29,22 +29,22 @@
       INNER JOIN UserData u ON ut.UserID = u.id
       WHERE u.username = ':user'
       AND t.id = ':id'";
-    $statement = $db->prepare($query);
+    $stmnt = $db->prepare($query);
 
     echo $user;
 
-    // $statement->bindValue(':user', $user);
-    $statement->bindValue(':id', $id);
+    $stmnt->bindValue(':user', $user);
+    $stmnt->bindValue(':id', $id);
 
-    $statement->execute();
-    $new_id = $statement->fetch(PDO::FETCH_ASSOC)['id'];
+    $stmnt->execute();
+    $new_id = $stmnt->fetch(PDO::FETCH_ASSOC)['id'];
 
     // Delete the task if it does belong to the user
     if ($new_id != '') {
       $query = "DELETE FROM Task WHERE id=':new_id'";
-      $statement = $db->prepare($query);
-      $statement->bindValue(':new_id', $new_id);
-      $statement->execute();
+      $stmnt = $db->prepare($query);
+      $stmnt->bindValue(':new_id', $new_id);
+      $stmnt->execute();
     }
 
     header("Location: calendar.php", true, 301);
