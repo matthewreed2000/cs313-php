@@ -33,7 +33,7 @@
 
     echo $user;
 
-    $statement->bindValue(':user', $user);
+    // $statement->bindValue(':user', $user);
     $statement->bindValue(':id', $id);
 
     $statement->execute();
