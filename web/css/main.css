@@ -112,6 +112,7 @@ p {
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-dark-color);
 }
 
 .picture-menu > a {
