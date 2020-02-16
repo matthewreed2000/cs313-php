@@ -31,8 +31,6 @@
       AND t.id = ':id'";
     $stmnt = $db->prepare($query);
 
-    // echo $user;
-
     $stmnt->bindValue(':user', $user);
     $stmnt->bindValue(':id', $id);
 
@@ -80,11 +78,8 @@
       $statement->execute();
       $info = $statement->fetch(PDO::FETCH_ASSOC);
 
-      // print_r($_POST);
-
       if (isset($_POST['deleteStatus'])) {
         $deleteStatus = sanitizeInput($_POST['deleteStatus']);
-        echo $deleteStatus;
         if ($deleteStatus == true) {
           deleteId($db, $username, $id);
         }
