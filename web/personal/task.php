@@ -74,8 +74,10 @@
       $statement->execute();
       $info = $statement->fetch(PDO::FETCH_ASSOC);
 
+      print_r($_POST);
+
       if (isset($_POST['submit'])) {
-        $deleteStatus = sanitizeInput($_POST['submit']);
+        $deleteStatus = sanitizeInput($_POST['deleteStatus']);
         echo $deleteStatus;
         if ($deleteStatus == true) {
           deleteId($db, $username, $id);
