@@ -76,6 +76,7 @@
 
       if (isset($_POST['deleteStatus'])) {
         $deleteStatus = sanitizeInput($_POST['deleteStatus']);
+        echo $deleteStatus;
         if ($deleteStatus == true) {
           deleteId($db, $username, $id);
         }
