@@ -103,7 +103,7 @@
         <h1><?=$info['title']?></h1>
         <p><?=$info['description']?></p>
         <form action="" method="POST">
-          <button type="submit" name="deleteStatus">Delete Task</button>
+          <button type="submit" name="deleteStatus" value="true">Delete Task</button>
         </form>
       <?php } else { ?>
         <p>You are not allowed to view this task</p>
