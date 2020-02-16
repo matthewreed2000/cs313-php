@@ -27,11 +27,11 @@
       SELECT t.id FROM Task t
       INNER JOIN UserTask ut ON t.id = ut.TaskID
       INNER JOIN UserData u ON ut.UserID = u.id
-      WHERE u.username = :user
-      AND t.id = :id";
+      WHERE u.username = ':user'
+      AND t.id = ':id'";
     $stmnt = $db->prepare($query);
 
-    echo $user;
+    // echo $user;
 
     $stmnt->bindValue(':user', $user);
     $stmnt->bindValue(':id', $id);
