@@ -23,12 +23,13 @@
 
   function deleteId($db, $user, $id) {
     // Make sure that the id is linked with the user
-    $statement = $db->prepare("
+    $query = "
       SELECT t.id FROM Task t
       INNER JOIN UserTask ut ON t.id = ut.TaskID
       INNER JOIN UserData u ON ut.UserID = u.id
       WHERE u.username = ':username'
-      AND t.id = ':id'");
+      AND t.id = ':id'";
+    $statement = $db->prepare($query);
     $statement->bindValue(':username', $user);
     $statement->bindValue(':id', $id);
     $statement->execute();
@@ -36,7 +37,8 @@
 
     // Delete the task if it does belong to the user
     if ($new_id != '') {
-      $statement = $db->prepare("DELETE FROM Task WHERE id=':new_id'");
+      $query = "DELETE FROM Task WHERE id=':new_id'";
+      $statement = $db->prepare($query);
       $statement->bindValue(':new_id', $new_id);
       $statement->execute();
     }
