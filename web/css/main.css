@@ -32,6 +32,11 @@ p {
   margin-right: calc(1.25vw + 1.25px);
 }
 
+a {
+  font-size: calc(1vw + 1px);
+  color: var(--main-text-color);
+}
+
 /*Found on: freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c*/
 #page-container {
   position: relative;
