@@ -31,6 +31,8 @@
       AND t.id = ':id'";
     $statement = $db->prepare($query);
 
+    echo $user;
+
     $statement->bindValue(':username', $user);
     $statement->bindValue(':id', $id);
 
