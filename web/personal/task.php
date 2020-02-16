@@ -30,8 +30,10 @@
       WHERE u.username = ':username'
       AND t.id = ':id'";
     $statement = $db->prepare($query);
+
     $statement->bindValue(':username', $user);
     $statement->bindValue(':id', $id);
+
     $statement->execute();
     $new_id = $statement->fetch(PDO::FETCH_ASSOC)['id'];
 
