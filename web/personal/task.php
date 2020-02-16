@@ -74,9 +74,9 @@
       $statement->execute();
       $info = $statement->fetch(PDO::FETCH_ASSOC);
 
-      print_r($_POST);
+      // print_r($_POST);
 
-      if (isset($_POST['submit'])) {
+      if (isset($_POST['deleteStatus'])) {
         $deleteStatus = sanitizeInput($_POST['deleteStatus']);
         echo $deleteStatus;
         if ($deleteStatus == true) {
