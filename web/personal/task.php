@@ -21,6 +21,30 @@
     exit();
   }
 
+  function deleteId($db, $user, $id) {
+    // Make sure that the id is linked with the user
+    $statement = $db->prepare("
+      SELECT t.id FROM Task t
+      INNER JOIN UserTask ut ON t.id = ut.TaskID
+      INNER JOIN UserData u ON ut.UserID = u.id
+      WHERE u.username = ':username'
+      AND t.id = ':id'");
+    $statement->bindValue(':username', $user);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
+    $new_id = $statement->fetch(PDO::FETCH_ASSOC)['id'];
+
+    // Delete the task if it does belong to the user
+    if ($new_id != '') {
+      $statement = $db->prepare("DELETE FROM Task WHERE id=':new_id'");
+      $statement->bindValue(':new_id', $new_id);
+      $statement->execute();
+    }
+
+    header("Location: calendar.php", true, 301);
+    exit();
+  }
+
   if (isset($_SESSION['frozen_waters_username'])
     && isset($_SESSION['frozen_waters_password'])) {
     // Get user login info when page loads
@@ -49,6 +73,13 @@
         AND t.id = '$id'");
       $statement->execute();
       $info = $statement->fetch(PDO::FETCH_ASSOC);
+
+      if (isset($_POST['deleteStatus'])) {
+        $deleteStatus = sanitizeInput($_POST['deleteStatus']);
+        if ($deleteStatus == true) {
+          deleteId($db, $username, $id);
+        }
+      }
     }
   }
   else {
@@ -68,6 +99,9 @@
       <?php if (isset($info)) { ?>
         <h1><?=$info['title']?></h1>
         <p><?=$info['description']?></p>
+        <form action="" method="POST">
+          <button type="submit" name="deleteStatus">Delete Task</button>
+        </form>
       <?php } else { ?>
         <p>You are not allowed to view this task</p>
       <?php } ?>
