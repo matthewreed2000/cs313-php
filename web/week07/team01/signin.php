@@ -6,6 +6,8 @@
   require "../../modules/dbConnect.php";
   $db = get_db();
 
+  $incorrect = false;
+
   if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -19,10 +21,11 @@
     $db_hash = $stmnt->fetch(PDO::FETCH_ASSOC)['password'];
 
     if (password_verify($password, $db_hash)) {
-      echo "CORRECT";
+      header('Location: welcome.php');
+      die();
     }
     else {
-      echo "INCORRECT";
+      $incorrect = true;
     }
 
     // echo "$username and $hash";
@@ -41,6 +44,11 @@
     <input type="text" name="username" placeholder="Username" />
     <input type="password" name="password" placeholder="Password" />
     <button type="submit">Log In</button>
+    <?php
+      if ($incorrect) {
+        echo "<p>Your login information was incorrect</p>";
+      }
+    ?>
   </form>
 </body>
 </html>
