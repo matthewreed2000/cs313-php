@@ -10,7 +10,7 @@
   $username = "UNKNOWN_USER";
 
   function return_to_login() {
-    header('Location: login.php');
+    header('Location: signin.php');
     die();
   }
 
