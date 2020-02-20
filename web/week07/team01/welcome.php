@@ -27,7 +27,7 @@
   }
   else {
     // return_to_login();
-    echo "ISNT SET";
+    print_r($_SESSION);
   }
 ?>
 
