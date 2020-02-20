@@ -2,6 +2,7 @@
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
+  session_start();
 
   require "../../modules/dbConnect.php";
   $db = get_db();
@@ -13,14 +14,17 @@
     $password = $_POST['password'];
     // $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = 'SELECT password FROM week07_user WHERE username=:username';
+    $query = 'SELECT password, id FROM week07_user WHERE username=:username';
     $stmnt = $db->prepare($query);
     $stmnt->bindValue(':username', $username);
     $stmnt->execute();
 
-    $db_hash = $stmnt->fetch(PDO::FETCH_ASSOC)['password'];
+    $db_info = $stmnt->fetch(PDO::FETCH_ASSOC);
+    $db_hash = $db_info['password'];
+    $db_id = $db_info['id'];
 
     if (password_verify($password, $db_hash)) {
+      $session['w07_user'] = $db_id;
       header('Location: welcome.php');
       die();
     }
