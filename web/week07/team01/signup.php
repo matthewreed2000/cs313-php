@@ -3,15 +3,13 @@
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
 
-  // if (isset($_POST)) {
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-      $username = $_POST['username'];
-      $password = $_POST['password'];
-      $hash = password_hash($password, PASSWORD_DEFAULT);
+  if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
 
-      echo "$username and $hash";
-    }
-  // }
+    echo "$username and $hash";
+  }
 ?>
 
 <!DOCTYPE html>
