@@ -11,7 +11,7 @@
     $password = $_POST['password'];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = 'INSERT INTO week07_user(username, password) VALUES (\':username\', \':password\')';
+    $query = 'INSERT INTO week07_user(username, password) VALUES (:username, :password)';
     $stmnt = $db->prepare($query);
     $stmnt->bindValue(':username', $username);
     $stmnt->bindValue(':password', $hash);
