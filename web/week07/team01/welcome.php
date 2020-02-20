@@ -33,7 +33,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign In</title>
+  <title>Welcome</title>
 </head>
 <body>
   <h1>Welcome <?=$username?></h1>
