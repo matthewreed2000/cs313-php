@@ -4,7 +4,7 @@
   error_reporting(E_ALL);
 
   if (isset($_POST)) {
-    if (isset($_POST['username'] && isset($_POST['password']))) {
+    if (isset($_POST['username'] and isset($_POST['password']))) {
     //   $username = $_POST['username'];
     //   $password = $_POST['password'];
     //   $hash = password_hash($password, PASSWORD_DEFAULT);
