@@ -24,7 +24,7 @@
     $db_id = $db_info['id'];
 
     if (password_verify($password, $db_hash)) {
-      $session['w07_user'] = $db_id;
+      $session['week07_user'] = $db_id;
       header('Location: welcome.php');
       die();
     }
