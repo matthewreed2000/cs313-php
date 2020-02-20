@@ -15,6 +15,7 @@
     $stmnt = $db->prepare($query);
     $stmnt->bindValue(':username', $username);
     $stmnt->bindValue(':password', $hash);
+    $stmnt->execute();
 
     echo "$username and $hash";
   }
