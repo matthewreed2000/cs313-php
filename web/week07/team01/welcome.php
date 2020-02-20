@@ -27,7 +27,7 @@
   }
   else {
     // return_to_login();
-    echo "ISNT SET"
+    echo "ISNT SET";
   }
 ?>
 
