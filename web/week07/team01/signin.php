@@ -9,17 +9,25 @@
   if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    // $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = 'INSERT INTO week07_user(username, password) VALUES (:username, :password) ON CONFLICT DO NOTHING';
+    $query = 'SELECT password FROM week07_user WHERE username=:username';
     $stmnt = $db->prepare($query);
     $stmnt->bindValue(':username', $username);
-    $stmnt->bindValue(':password', $hash);
     $stmnt->execute();
 
+    $db_hash = $stmnt->fetch(PDO::FETCH_ASSOC)['password'];
+
+    if (password_verify($password, $db_hash)) {
+      echo "CORRECT";
+    }
+    else {
+      echo "INCORRECT";
+    }
+
     // echo "$username and $hash";
-    header('Location: signin.php');
-    die();
+    // header('Location: signin.php');
+    // die();
   }
 ?>
 
@@ -32,7 +40,7 @@
   <form action="" method="POST">
     <input type="text" name="username" placeholder="Username" />
     <input type="password" name="password" placeholder="Password" />
-    <button type="submit">Submit</button>
+    <button type="submit">Log In</button>
   </form>
 </body>
 </html>
