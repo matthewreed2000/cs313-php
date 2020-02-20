@@ -26,7 +26,8 @@
     // if ($username)
   }
   else {
-    return_to_login();
+    // return_to_login();
+    echo "ISNT SET"
   }
 ?>
 
