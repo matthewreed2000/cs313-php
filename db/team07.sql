@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS week07_user;
+
+CREATE TABLE week07_user (
+   id SERIAL PRIMARY KEY,
+   username VARCHAR(100) NOT NULL UNIQUE,
+   password VARCHAR(100) NOT NULL
+);
