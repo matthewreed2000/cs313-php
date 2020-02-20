@@ -54,5 +54,6 @@
       }
     ?>
   </form>
+  <a href="signup.php">Sign Up</a>
 </body>
 </html>
