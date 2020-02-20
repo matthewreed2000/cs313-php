@@ -41,7 +41,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign Up</title>
+  <title>Sign In</title>
 </head>
 <body>
   <form action="" method="POST">
