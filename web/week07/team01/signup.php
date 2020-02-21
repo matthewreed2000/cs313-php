@@ -6,7 +6,7 @@
   require "../../modules/dbConnect.php";
   $db = get_db();
 
-  $mismatch = false;
+  $error = NULL;
 
   if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
@@ -26,7 +26,7 @@
       die();
     }
     else {
-      $mismatch = true;
+      $error = 'mismatch';
     }
   }
 ?>
@@ -40,19 +40,19 @@
   <form action="" method="POST">
     <input type="text" name="username" placeholder="Username" />
     <br />
-    <?php if ($mismatch) { ?>
+    <?php if ($error != NULL) { ?>
     <p style="color:red;">*</p>
     <?php } ?>
     <input type="password" name="password" placeholder="Password" />
     <br />
-    <?php if ($mismatch) { ?>
+    <?php if ($error != NULL) { ?>
     <p style="color:red;">*</p>
     <?php } ?>
     <input type="password" name="passmatch" placeholder="Re-type Password" />
     <br />
     <button type="submit">Submit</button>
   </form>
-  <?php if ($mismatch) { ?>
+  <?php if ($error == 'mismatch') { ?>
     <p style="color:red;">Passwords do not match</p>
   <?php } ?>
 </body>
