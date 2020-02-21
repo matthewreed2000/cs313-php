@@ -39,12 +39,21 @@
 <body>
   <form action="" method="POST">
     <input type="text" name="username" placeholder="Username" />
+    <br />
+    <?php if ($mismatch) { ?>
+    <p style="color:red;">*</p>
+    <?php } ?>
     <input type="password" name="password" placeholder="Password" />
+    <br />
+    <?php if ($mismatch) { ?>
+    <p style="color:red;">*</p>
+    <?php } ?>
     <input type="password" name="passmatch" placeholder="Re-type Password" />
+    <br />
     <button type="submit">Submit</button>
   </form>
   <?php if ($mismatch) { ?>
-    <p>Passwords do not match</p>
+    <p style="color:red;">Passwords do not match</p>
   <?php } ?>
 </body>
 </html>
