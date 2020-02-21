@@ -69,6 +69,7 @@
     <br />
     <button type="submit">Submit</button>
   </form>
+  <p id='output'></p>
   <?php if ($error == 'mismatch') { ?>
     <p>Passwords do not match</p>
   <?php } ?>
@@ -78,5 +79,16 @@
   <?php if ($error == 'length') { ?>
     <p>Password must contain at least 7 characters</p>
   <?php } ?>
+  <script>
+    function pass_strength(input) {
+      output = document.getElementById('output');
+      if (len(input) < 7) {
+        output.innerHTML = 'Greater than 7';
+      }
+      if (!(input.match(/\d+/g))) {
+        output.innerHTML = 'Must contain at least 1 number';
+      }
+    }
+  </script>
 </body>
 </html>
