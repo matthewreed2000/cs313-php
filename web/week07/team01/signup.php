@@ -15,15 +15,25 @@
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
     if ($password == $passmatch) {
-      $query = 'INSERT INTO week07_user(username, password) VALUES (:username, :password) ON CONFLICT DO NOTHING';
-      $stmnt = $db->prepare($query);
-      $stmnt->bindValue(':username', $username);
-      $stmnt->bindValue(':password', $hash);
-      $stmnt->execute();
+      if (preg_match('/[0-9]+/', $password)) {
+        if (strlen($password) >= 7) {
+          $query = 'INSERT INTO week07_user(username, password) VALUES (:username, :password) ON CONFLICT DO NOTHING';
+          $stmnt = $db->prepare($query);
+          $stmnt->bindValue(':username', $username);
+          $stmnt->bindValue(':password', $hash);
+          $stmnt->execute();
 
-      // echo "$username and $hash";
-      header('Location: signin.php');
-      die();
+          // echo "$username and $hash";
+          header('Location: signin.php');
+          die();
+        }
+        else {
+          $error = 'length';
+        }
+      }
+      else {
+        $error = 'number';
+      }
     }
     else {
       $error = 'mismatch';
@@ -49,18 +59,24 @@
     <br />
     <input type="password" name="password" placeholder="Password" />
     <?php if ($error != NULL) { ?>
-      <p style="color:red;">*</p>
+      <p>*</p>
     <?php } ?>
     <br />
     <input type="password" name="passmatch" placeholder="Re-type Password" />
     <?php if ($error != NULL) { ?>
-      <p style="color:red;">*</p>
+      <p>*</p>
     <?php } ?>
     <br />
     <button type="submit">Submit</button>
   </form>
   <?php if ($error == 'mismatch') { ?>
-    <p style="color:red;">Passwords do not match</p>
+    <p>Passwords do not match</p>
+  <?php } ?>
+  <?php if ($error == 'number') { ?>
+    <p>Password must contain a number</p>
+  <?php } ?>
+  <?php if ($error == 'length') { ?>
+    <p>Password must contain at least 7 characters</p>
   <?php } ?>
 </body>
 </html>
