@@ -85,7 +85,7 @@
       if (len(input) < 7) {
         output.innerHTML = 'Greater than 7';
       }
-      if (!(input.match(/\d+/g))) {
+      if (!(input.match(/^.*(\d+).*$/g))) {
         output.innerHTML = 'Must contain at least 1 number';
       }
     }
