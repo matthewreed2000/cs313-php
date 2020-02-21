@@ -35,6 +35,13 @@
 <html>
 <head>
   <title>Sign Up</title>
+  <style>
+    p {
+      display: inline-block;
+      color: red;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <form action="" method="POST">
