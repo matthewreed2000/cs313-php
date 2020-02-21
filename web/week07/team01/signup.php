@@ -47,15 +47,15 @@
   <form action="" method="POST">
     <input type="text" name="username" placeholder="Username" />
     <br />
-    <?php if ($error != NULL) { ?>
-      <p style="color:red;">*</p>
-    <?php } ?>
     <input type="password" name="password" placeholder="Password" />
-    <br />
     <?php if ($error != NULL) { ?>
       <p style="color:red;">*</p>
     <?php } ?>
+    <br />
     <input type="password" name="passmatch" placeholder="Re-type Password" />
+    <?php if ($error != NULL) { ?>
+      <p style="color:red;">*</p>
+    <?php } ?>
     <br />
     <button type="submit">Submit</button>
   </form>
