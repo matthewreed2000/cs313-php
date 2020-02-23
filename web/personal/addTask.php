@@ -136,7 +136,7 @@
       <form action="" method="POST">
         <input type="text" name="title" placeholder="Task Title" required>
         <textarea name="descr" placeholder="Description"></textarea>
-        <div class="half">
+        <!-- <div class="half">
           <input type="date" name="startdate" placeholder="Start Date">
           <input type="time" name="starttime" placeholder="Start Time">
         </div>
@@ -145,7 +145,7 @@
           <input type="time" name="endtime" placeholder="End Time">
         </div>
         <input type="text" name="repeat" placeholder="Repeat Pattern">
-        <input type="number" name="priority" placeholder="Priority">
+        <input type="number" name="priority" placeholder="Priority"> -->
         <button type="submit">Add Task</button>
       </form>
     </div>
