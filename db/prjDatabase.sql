@@ -52,15 +52,15 @@ CREATE TABLE UserTask (
 
 -- Testing Some Values
 INSERT INTO UserData (username, password, displayname)
-VALUES ('test', 'test123', 'Test User');
+VALUES ('test', '$2y$10$jFMJkozX1W8FFK1/llTZmehJNS8SBjRj6D87FZAZklDKT1E3YUteK', 'Test User'); -- Password: test123
 
-INSERT INTO UserData (username, password, displayname)
-VALUES ('ree18008', 'password', 'Matthew Reed');
+-- INSERT INTO UserData (username, password, displayname)
+-- VALUES ('ree18008', 'password', 'Matthew Reed');
 
-INSERT INTO UserData (username, password, displayname)
-VALUES ('brobirch', '123456', 'Bro Birch');
+-- INSERT INTO UserData (username, password, displayname)
+-- VALUES ('brobirch', '123456', 'Bro Birch');
 
--- This would be weekly on thursdays until March 03
+-- -- This would be weekly on thursdays until March 03
 INSERT INTO Repeat (Pattern, EndDate)
 VALUES ('wR', '2020_03_03');
 
@@ -73,7 +73,7 @@ VALUES ('Test Task');
 INSERT INTO Task (title, Description, SetDate)
 VALUES ('Test Task Desc', 'This is a description', '2020_02_26');
 
--- This would be from 8:00 AM to 8:00 PM
+-- -- This would be from 8:00 AM to 8:00 PM
 INSERT INTO Task (Title, Description, SetDate, StartTime, EndTime)
 VALUES ('Test Task Time', 'This is a test with a start and end time', '2020_02_15', 480, 1200);
 
@@ -86,8 +86,8 @@ VALUES ('Test Task All', 'This is all the things', 1, 0, 120, 10, 1);
 INSERT INTO UserTask (UserId, TaskID)
 VALUES (1, 2);
 
-INSERT INTO UserTask (UserId, TaskID)
-VALUES (2, 1);
+-- INSERT INTO UserTask (UserId, TaskID)
+-- VALUES (2, 1);
 
 INSERT INTO UserTask (UserId, TaskID)
 VALUES (1, 3);

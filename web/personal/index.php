@@ -7,6 +7,8 @@
   require "../modules/dbConnect.php";
   $db = get_db();
 
+  require "../modules/verifyPassword.php";
+
   $show_error = false;
 
   function sanitizeInput($input) {
