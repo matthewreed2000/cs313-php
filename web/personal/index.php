@@ -53,7 +53,7 @@
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Log In</button>
       </form>
-      <a>Register Account</a>
+      <a href="addUser.php">Register Account</a>
       <p>For testing purposes, use the username "test" and the password "test123"</p>
       <?php if ($show_error) { ?>
         <p>Incorrect username or password</p>
