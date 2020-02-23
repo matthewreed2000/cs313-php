@@ -104,20 +104,22 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <?php include "modules/header.php";?>
-  <main id="content-wrap">
-    <div class="jumbotron">
-      <?php if (isset($info)) { ?>
-        <h1><?=$info['title']?></h1>
-    </div>
-      <p><?=$info['description']?></p>
-      <form action="" method="POST">
-        <button type="submit" name="deleteStatus" value="true">Delete Task</button>
-      </form>
-    <?php } else { ?>
-      <p>You are not allowed to view this task</p>
-    <?php } ?>
-  </main>
+  <div id="page-container">
+    <?php include "modules/header.php";?>
+    <main id="content-wrap">
+      <div class="jumbotron">
+        <?php if (isset($info)) { ?>
+          <h1><?=$info['title']?></h1>
+      </div>
+        <p><?=$info['description']?></p>
+        <form action="" method="POST">
+          <button type="submit" name="deleteStatus" value="true">Delete Task</button>
+        </form>
+      <?php } else { ?>
+        <p>You are not allowed to view this task</p>
+      <?php } ?>
+    </main>
+  </div>
   <?php include "modules/footer.php";?>
 </body>
 </html>
