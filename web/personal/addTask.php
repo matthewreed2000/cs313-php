@@ -108,7 +108,7 @@
 
       if (!is_null($taskid)) {
         addPostProperty($taskid, 'Description', 'descr');
-        // addPostProperty($taskid, 'SetDate', 'startdate');
+        addPostProperty($taskid, 'setdate');
         // addPostProperty($taskid, 'starttime');
         // addPostProperty($taskid, 'EndDateOffset', 'enddate');
         // addPostProperty($taskid, 'endtime');
@@ -136,9 +136,9 @@
       <form action="" method="POST">
         <input type="text" name="title" placeholder="Task Title" required>
         <textarea name="descr" placeholder="Description"></textarea>
-        <!-- <div class="half">
-          <input type="date" name="startdate" placeholder="Start Date">
-          <input type="time" name="starttime" placeholder="Start Time">
+        <!-- <div class="half"> -->
+          <input type="date" name="setdate" placeholder="Set Date">
+          <!-- <input type="time" name="starttime" placeholder="Start Time">
         </div>
         <div class="half">
           <input type="date" name="enddate" placeholder="End Date">
