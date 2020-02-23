@@ -44,6 +44,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Calendar</title>
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/calendar.css">
 </head>
 <body>

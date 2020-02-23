@@ -21,6 +21,7 @@
 <head>
   <title>Log In</title>
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header id="header"></header>

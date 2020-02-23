@@ -73,7 +73,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Register User</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header id="header"></header>

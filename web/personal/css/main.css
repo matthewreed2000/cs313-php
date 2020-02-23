@@ -1,3 +1,22 @@
+/*:root {
+  --header-bg-color: #1e272e;
+  --header-text-color: #d2dae2;
+  --main-bg-color: #d2dae2;
+  --main-text-color: #1e272e;
+  --secondary-bg-color: #7692ff;
+  --secondary-text-color: #abd2fa;
+  --tertiary-bg-color: #6cae75;
+  --tertiary-text-color: #d2dae2;
+  --footer-bg-color: #485460;
+  --footer-text-color: #d2dae2;
+  --shadow-bright-color: #808e9b;
+  --shadow-dark-color: #1e272e;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
 form > input{
   width: 100%;
 }
