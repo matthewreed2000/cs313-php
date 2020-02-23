@@ -34,18 +34,18 @@
     $stmnt->execute();
   }
 
-  // function addPostProperty($id, $title, $key=NULL) {
-  //   if (is_null($key)) {
-  //     $key=$title;
-  //   }
+  function addPostProperty($id, $title, $key=NULL) {
+    if (is_null($key)) {
+      $key=$title;
+    }
 
-  //   if (isset($_POST[$key])) {
-  //     if (!empty($_POST[$key]))
-  //       $value = sanitizeInput($_POST[$key]);
-  //       // addProperty($id, $title, $value);
-  //     }
-  //   }
-  // }
+    if (isset($_POST[$key])) {
+      if (!empty($_POST[$key])) {
+        $value = sanitizeInput($_POST[$key]);
+        addProperty($id, $title, $value);
+      }
+    }
+  }
 
   if (isset($_SESSION['frozen_waters_username'])
     && isset($_SESSION['frozen_waters_password'])) {
@@ -107,7 +107,7 @@
       }
 
       if (!is_null($taskid)) {
-        // addPostProperty($taskid, 'Description', 'descr');
+        addPostProperty($taskid, 'Description', 'descr');
         // addPostProperty($taskid, 'SetDate', 'startdate');
         // addPostProperty($taskid, 'starttime');
         // addPostProperty($taskid, 'EndDateOffset', 'enddate');
