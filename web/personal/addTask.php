@@ -113,7 +113,7 @@
         // addPostProperty($taskid, 'EndDateOffset', 'enddate');
         // addPostProperty($taskid, 'endtime');
         // addPostProperty($taskid, 'repeat');
-        // addPostProperty($taskid, 'priority');
+        addPostProperty($taskid, 'priority');
       }
 
       header("Location: calendar.php", true, 301);
