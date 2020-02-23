@@ -95,7 +95,7 @@
   <main id="content-wrap">
     <div class="jumbotron">
       <form action="" method="POST">
-        <input type="text" name="title" placeholder="Task Title">
+        <input type="text" name="title" placeholder="Task Title" required>
         <textarea name="descr" placeholder="Description"></textarea>
         <div class="half">
           <input type="date" name="startdate" placeholder="Start Date">
