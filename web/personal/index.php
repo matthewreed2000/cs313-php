@@ -30,12 +30,12 @@
           $username = sanitizeInput($_POST['username']);
           $password = sanitizeInput($_POST['password']);
 
-          $statement = $db->prepare("SELECT password FROM UserData
-            WHERE username='$username'");
-          $statement->execute();
+          // $statement = $db->prepare("SELECT password FROM UserData
+          //   WHERE username='$username'");
+          // $statement->execute();
 
-          $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
-          if ($password == $dbPass) {
+          // $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
+          if (verify_password('UserData', $username, $password)) {
             $_SESSION['frozen_waters_username'] = $username;
             $_SESSION['frozen_waters_password'] = $password;
 
