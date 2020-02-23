@@ -23,29 +23,29 @@
     exit();
   }
 
-  function addProperty($id, $title, $value) {
-    $db = get_db();
+  // function addProperty($id, $title, $value) {
+  //   $db = get_db();
 
-    $query = "UPDATE Task SET $title=:value WHERE id=:id";
-    $stmnt = $db->prepare($query);
-    $stmnt->bindValue(':value', $value);
-    $stmnt->bindValue(':id', $id);
+  //   $query = "UPDATE Task SET $title=:value WHERE id=:id";
+  //   $stmnt = $db->prepare($query);
+  //   $stmnt->bindValue(':value', $value);
+  //   $stmnt->bindValue(':id', $id);
 
-    $stmnt->execute();
-  }
+  //   $stmnt->execute();
+  // }
 
-  function addPostProperty($id, $title, $key=NULL) {
-    if (is_null($key)) {
-      $key=$title;
-    }
+  // function addPostProperty($id, $title, $key=NULL) {
+  //   if (is_null($key)) {
+  //     $key=$title;
+  //   }
 
-    if (isset($_POST[$key])) {
-      if (!empty($_POST[$key]))
-        $value = sanitizeInput($_POST[$key]);
-        // addProperty($id, $title, $value);
-      }
-    }
-  }
+  //   if (isset($_POST[$key])) {
+  //     if (!empty($_POST[$key]))
+  //       $value = sanitizeInput($_POST[$key]);
+  //       // addProperty($id, $title, $value);
+  //     }
+  //   }
+  // }
 
   if (isset($_SESSION['frozen_waters_username'])
     && isset($_SESSION['frozen_waters_password'])) {
