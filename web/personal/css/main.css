@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+form {
+  max-width: 300px;
+}
+
 form > input, form > button{
   width: 100%;
 }

@@ -117,7 +117,6 @@
     <?php } else { ?>
       <p>You are not allowed to view this task</p>
     <?php } ?>
-    <a href="calendar.php">Return to Calendar</a>
   </main>
   <?php include "modules/footer.php";?>
 </body>
