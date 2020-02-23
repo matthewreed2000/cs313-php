@@ -80,23 +80,25 @@
 <body>
   <?php include "modules/header.php";?>
   <main id="content-wrap">
-    <form action="" method="POST">
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <?php if ($error != NULL) { ?>
-        <p>*</p>
+    <div class="jumbotron">
+      <form action="" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <?php if ($error != NULL) { ?>
+          <p>*</p>
+        <?php } ?>
+        <input type="password" name="passmatch" placeholder="Re-type Password" required />
+        <?php if ($error != NULL) { ?>
+          <p>*</p>
+        <?php } ?>
+        <input type="text" name="display" placeholder="Display Name" required />
+        <button type="submit">Submit</button>
+      </form>
+      <p id='output'></p>
+      <?php if ($error == 'mismatch') { ?>
+        <p>Passwords do not match</p>
       <?php } ?>
-      <input type="password" name="passmatch" placeholder="Re-type Password" required />
-      <?php if ($error != NULL) { ?>
-        <p>*</p>
-      <?php } ?>
-      <input type="text" name="display" placeholder="Display Name" required />
-      <button type="submit">Submit</button>
-    </form>
-    <p id='output'></p>
-    <?php if ($error == 'mismatch') { ?>
-      <p>Passwords do not match</p>
-    <?php } ?>
+    </div>
   </main>
   <?php include "modules/footer.php";?>
 </body>
