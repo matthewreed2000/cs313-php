@@ -107,7 +107,7 @@
   <?php include "modules/header.php";?>
   <main id="content-wrap">
     <div class="jumbotron">
-      <?php if (isset($info)) { ?>
+      <?php if (!empty($info)) { ?>
         <h1><?=$info['title']?></h1>
     </div>
       <p><?=$info['description']?></p>
