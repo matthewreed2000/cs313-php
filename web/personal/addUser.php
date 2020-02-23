@@ -21,6 +21,8 @@
     exit();
   }
 
+  // $query = 'INSERT INTO week07_user(username, password) VALUES (:username, :password) ON CONFLICT DO NOTHING'
+
   // if (isset($_SESSION['frozen_waters_username'])
   //   && isset($_SESSION['frozen_waters_password'])) {
   //   $username = sanitizeSession($_SESSION['frozen_waters_username']);

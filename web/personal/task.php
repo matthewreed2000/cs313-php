@@ -21,7 +21,9 @@
     exit();
   }
 
-  function deleteId($db, $user, $id) {
+  function deleteId($user, $id) {
+    $db = get_db();
+    
     // Make sure that the id is linked with the user
     $query = "
       SELECT t.id FROM Task t
@@ -81,7 +83,7 @@
       if (isset($_POST['deleteStatus'])) {
         $deleteStatus = sanitizeInput($_POST['deleteStatus']);
         if ($deleteStatus == true) {
-          deleteId($db, $username, $id);
+          deleteId($username, $id);
         }
       }
     }
