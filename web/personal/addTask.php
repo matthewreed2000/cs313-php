@@ -23,6 +23,28 @@
     exit();
   }
 
+  function addProperty($id, $title, $value) {
+    $db = get_db();
+
+    $query = "UPDATE Task SET $title=:value WHERE id=:id";
+    $stmnt = $db->prepare($query);
+    $stmnt->bindValue(':value', $value);
+    $stmnt->bindValue(':id', $id);
+
+    $stmnt->execute();
+  }
+
+  function addPostProperty($id, $title, $key=NULL) {
+    if (is_null($key)) {
+      $key=$title;
+    }
+
+    if (isset($_POST[$key])) {
+      $value = sanitizeInput($_POST[$key]);
+      addProperty($id, $title, $value);
+    }
+  }
+
   if (isset($_SESSION['frozen_waters_username'])
     && isset($_SESSION['frozen_waters_password'])) {
     $username = sanitizeSession($_SESSION['frozen_waters_username']);
@@ -44,18 +66,23 @@
   // Will add task if POST exists
   if (isset($_POST)) {
     // TODO
-    $validForm = isset($_POST['title']) ? !empty($_POST['title']) : 0 &&
-                 isset($_POST['descr']) ? !empty($_POST['descr']) : 0;
+    // $validForm = isset($_POST['title']) ? !empty($_POST['title']) : 0 &&
+    //              isset($_POST['descr']) ? !empty($_POST['descr']) : 0;
+    $validForm = isset($_POST['title']) ? !empty($_POST['title']) : 0;
     if ($validForm) {
+      $taskid = NULL;
       $title = sanitizeInput($_POST['title']);
-      $descr = sanitizeInput($_POST['descr']);
+      // $descr = sanitizeInput($_POST['descr']);
 
-      $query = 'INSERT INTO Task(Title, Description)
-        VALUES (:title, :descr) RETURNING id';
+      // $query = 'INSERT INTO Task(Title, Description)
+      //   VALUES (:title, :descr) RETURNING id';
+
+      $query = 'INSERT INTO Task(Title)
+         VALUES (:title) RETURNING id';
       
       $stmnt = $db->prepare($query);
       $stmnt->bindValue(':title', $title);
-      $stmnt->bindValue(':descr', $descr);
+      // $stmnt->bindValue(':descr', $descr);
 
       $stmnt->execute();
 
@@ -67,7 +94,7 @@
 
         if ($userid = $stmnt->fetch(PDO::FETCH_ASSOC)['id']) {
           $query = 'INSERT INTO UserTask(UserID, TaskID)
-            VALUES (:userid, :taskid)';
+            VALUES (:userid, :taskid) RETURNING id';
 
           $stmnt = $db->prepare($query);
           $stmnt->bindValue(':taskid', $taskid);
@@ -75,6 +102,16 @@
 
           $stmnt->execute();
         }
+      }
+
+      if (!is_null($taskid)) {
+        addPostProperty($taskid, 'Description', 'descr');
+        // addPostProperty($taskid, 'SetDate', 'startdate');
+        // addPostProperty($taskid, 'starttime');
+        // addPostProperty($taskid, 'EndDateOffset', 'enddate');
+        // addPostProperty($taskid, 'endtime');
+        // addPostProperty($taskid, 'repeat');
+        addPostProperty($taskid, 'priority');
       }
 
       header("Location: calendar.php", true, 301);
