@@ -95,14 +95,14 @@
   <main id="content-wrap">
     <div class="jumbotron">
       <form action="" method="POST">
-        <input type="text" name="title">
-        <textarea name="descr"></textarea>
-        <input type="date" name="startdate" class="half">
-        <input type="time" name="starttime" class="half">
-        <input type="date" name="enddate" class="half">
-        <input type="time" name="endtime" class="half">
-        <input type="text" name="repeat">
-        <input type="number" name="priority">
+        <input type="text" name="title" placeholder="Task Title">
+        <textarea name="descr" placeholder="Description"></textarea>
+        <input type="date" name="startdate" class="half" placeholder="Start Date">
+        <input type="time" name="starttime" class="half" placeholder="Start Time">
+        <input type="date" name="enddate" class="half" placeholder="End Date">
+        <input type="time" name="endtime" class="half" placeholder="End Time">
+        <input type="text" name="repeat" placeholder="Repeat Pattern">
+        <input type="number" name="priority" placeholder="Priority">
         <button type="submit">Add Task</button>
       </form>
     </div>

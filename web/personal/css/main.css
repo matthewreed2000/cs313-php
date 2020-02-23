@@ -22,7 +22,7 @@ form {
   margin: auto;
 }
 
-form > input, form > button{
+form > input, form > button, form > textarea{
   width: 100%;
 }
 
