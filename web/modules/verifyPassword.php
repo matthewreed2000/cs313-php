@@ -5,9 +5,9 @@
   function verify_password($user_table, $username, $password) {
     $db = get_db();
 
-    $query = "SELECT password FROM :user_table WHERE username=:username";
+    $query = "SELECT password FROM $user_table WHERE username=:username";
     $stmnt = $db->prepare($query);
-    $stmnt->bindValue(':user_table', $user_table);
+    // $stmnt->bindValue(':user_table', $user_table);
     $stmnt->bindValue(':username', $username);
     $stmnt->execute();
 
