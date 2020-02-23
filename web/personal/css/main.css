@@ -25,3 +25,15 @@ form {
 form > input, form > button{
   width: 100%;
 }
+
+form > .half {
+  width: 50%;
+}
+
+form > .third {
+  width: 33.333%;
+}
+
+form > .two-third {
+  width: 66.667%;
+}
