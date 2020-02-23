@@ -107,13 +107,13 @@
       }
 
       if (!is_null($taskid)) {
-        addPostProperty($taskid, 'Description', 'descr');
+        // addPostProperty($taskid, 'Description', 'descr');
         // addPostProperty($taskid, 'SetDate', 'startdate');
         // addPostProperty($taskid, 'starttime');
         // addPostProperty($taskid, 'EndDateOffset', 'enddate');
         // addPostProperty($taskid, 'endtime');
         // addPostProperty($taskid, 'repeat');
-        addPostProperty($taskid, 'priority');
+        // addPostProperty($taskid, 'priority');
       }
 
       header("Location: calendar.php", true, 301);
