@@ -42,7 +42,7 @@
     if (isset($_POST[$key])) {
       if (!empty($_POST[$key]))
         $value = sanitizeInput($_POST[$key]);
-        addProperty($id, $title, $value);
+        // addProperty($id, $title, $value);
       }
     }
   }
