@@ -109,15 +109,15 @@
     <div class="jumbotron">
       <?php if (isset($info)) { ?>
         <h1><?=$info['title']?></h1>
-        <p><?=$info['description']?></p>
-        <form action="" method="POST">
-          <button type="submit" name="deleteStatus" value="true">Delete Task</button>
-        </form>
-      <?php } else { ?>
-        <p>You are not allowed to view this task</p>
-      <?php } ?>
-      <a href="calendar.php">Return to Calendar</a>
     </div>
+      <p><?=$info['description']?></p>
+      <form action="" method="POST">
+        <button type="submit" name="deleteStatus" value="true">Delete Task</button>
+      </form>
+    <?php } else { ?>
+      <p>You are not allowed to view this task</p>
+    <?php } ?>
+    <a href="calendar.php">Return to Calendar</a>
   </main>
   <footer id="footer"></footer>
 </body>
