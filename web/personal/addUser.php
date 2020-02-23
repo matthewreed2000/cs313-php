@@ -76,26 +76,30 @@
   <title></title>
 </head>
 <body>
-  <form action="" method="POST">
-    <input type="text" name="username" placeholder="Username" required />
-    <br />
-    <input type="password" name="password" placeholder="Password" required />
-    <?php if ($error != NULL) { ?>
-      <p>*</p>
+  <header id="header"></header>
+  <main id="content-wrapper">
+    <form action="" method="POST">
+      <input type="text" name="username" placeholder="Username" required />
+      <br />
+      <input type="password" name="password" placeholder="Password" required />
+      <?php if ($error != NULL) { ?>
+        <p>*</p>
+      <?php } ?>
+      <br />
+      <input type="password" name="passmatch" placeholder="Re-type Password" required />
+      <?php if ($error != NULL) { ?>
+        <p>*</p>
+      <?php } ?>
+      <br />
+      <input type="text" name="display" placeholder="Display Name" required />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <p id='output'></p>
+    <?php if ($error == 'mismatch') { ?>
+      <p>Passwords do not match</p>
     <?php } ?>
-    <br />
-    <input type="password" name="passmatch" placeholder="Re-type Password" required />
-    <?php if ($error != NULL) { ?>
-      <p>*</p>
-    <?php } ?>
-    <br />
-    <input type="text" name="display" placeholder="Display Name" required />
-    <br />
-    <button type="submit">Submit</button>
-  </form>
-  <p id='output'></p>
-  <?php if ($error == 'mismatch') { ?>
-    <p>Passwords do not match</p>
-  <?php } ?>
+  </main>
+  <footer id="footer"></footer>
 </body>
 </html>

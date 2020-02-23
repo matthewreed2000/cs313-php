@@ -7,6 +7,8 @@
   require "../modules/dbConnect.php";
   $db = get_db();
 
+  require "../modules/verifyPassword.php";
+
   function sanitizeInput($input) {
     // TODO
     return $input;
@@ -58,13 +60,13 @@
     $password = sanitizeSession($_SESSION['frozen_waters_password']);
 
     // If the login info is wrong, return the user to the login page
-    $statement = $db->prepare("SELECT password FROM UserData
-      WHERE username=:username");
-    $statement->bindValue(':username', $username);
-    $statement->execute();
+    // $statement = $db->prepare("SELECT password FROM UserData
+    //   WHERE username=:username");
+    // $statement->bindValue(':username', $username);
+    // $statement->execute();
 
-    $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
-    if ($password != $dbPass) {
+    // $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
+    if (!verify_password('UserData', $username, $password)) {
       returnToLogin();
     }
 
@@ -101,6 +103,7 @@
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+  <header id="header"></header>
   <main id="content-wrap">
     <div class="jumbotron">
       <?php if (isset($info)) { ?>
@@ -115,5 +118,6 @@
       <a href="calendar.php">Return to Calendar</a>
     </div>
   </main>
+  <footer id="footer"></footer>
 </body>
 </html>

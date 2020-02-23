@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+  <header id="header"></header>
   <main id="content-wrap">
     <div class="jumbotron">
       <?php
@@ -52,11 +53,13 @@
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Log In</button>
       </form>
+      <a>Register Account</a>
       <p>For testing purposes, use the username "test" and the password "test123"</p>
       <?php if ($show_error) { ?>
         <p>Incorrect username or password</p>
       <?php } ?>
     </div>
   </main>
+  <footer id="footer"></footer>
 </body>
 </html>
