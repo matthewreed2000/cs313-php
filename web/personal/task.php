@@ -41,7 +41,7 @@
 
     // Delete the task if it does belong to the user
     if ($new_id != '') {
-      $query = "DELETE FROM Task WHERE id=':new_id'";
+      $query = "DELETE FROM Task WHERE id=:new_id";
       $stmnt = $db->prepare($query);
       $stmnt->bindValue(':new_id', $new_id);
       $stmnt->execute();
@@ -59,7 +59,8 @@
 
     // If the login info is wrong, return the user to the login page
     $statement = $db->prepare("SELECT password FROM UserData
-      WHERE username='$username'");
+      WHERE username=:username");
+    $statement->bindValue(':username', $username);
     $statement->execute();
 
     $dbPass = $statement->fetch(PDO::FETCH_ASSOC)['password'];
