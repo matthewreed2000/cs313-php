@@ -14,10 +14,11 @@
 }
 
 html, body {
-  /*display: grid;*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-height: 100%;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
@@ -46,16 +47,16 @@ a {
 }
 
 #content-wrap {
-  padding-top: calc(2.5vw + 2.5px);
-  padding-bottom: calc(2.5vw + 2.5px);
+  /*padding-top: calc(2.5vw + 2.5px);*/
+  /*padding-bottom: calc(2.5vw + 2.5px);*/
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   /*text-shadow: 0.1rem 0.1rem 0.1rem var(--shadow-dark-color);*/
 }
 
 #header {
-  position: absolute;
-  top: 0;
+  /*position: absolute;*/
+  /*top: 0;*/
   width: 100%;
   height: calc(2.5vw + 2.5px);
   overflow: hidden;
@@ -81,11 +82,11 @@ a {
 }
 
 #footer {
-  position: absolute;
+  /*position: absolute;*/
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
-  bottom: 0;
+  /*bottom: 0;*/
   width: 100%;
   height: calc(2.5vw + 2.5px);
   background-color: var(--footer-bg-color);
