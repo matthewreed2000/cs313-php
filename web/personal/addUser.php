@@ -40,8 +40,8 @@
   // else {
   //   returnToLogin();
   // }
-  require "../modules/dbConnect.php";
-  $db = get_db();
+  // require "../modules/dbConnect.php";
+  // $db = get_db();
 
   $error = NULL;
 
