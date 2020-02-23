@@ -91,7 +91,7 @@
 </head>
 <body>
   <header id="header"></header>
-  <main id="content-wrapper">
+  <main id="content-wrap">
     <div class="jumbotron">
       <form action="" method="POST">
         <input type="text" name="title">

@@ -77,7 +77,7 @@
 </head>
 <body>
   <header id="header"></header>
-  <main id="content-wrapper">
+  <main id="content-wrap">
     <form action="" method="POST">
       <input type="text" name="username" placeholder="Username" required />
       <br />
