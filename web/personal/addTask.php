@@ -23,16 +23,16 @@
     exit();
   }
 
-  // function addProperty($id, $title, $value) {
-  //   $db = get_db();
+  function addProperty($id, $title, $value) {
+    $db = get_db();
 
-  //   $query = "UPDATE Task SET $title=:value WHERE id=:id";
-  //   $stmnt = $db->prepare($query);
-  //   $stmnt->bindValue(':value', $value);
-  //   $stmnt->bindValue(':id', $id);
+    $query = "UPDATE Task SET $title=:value WHERE id=:id";
+    $stmnt = $db->prepare($query);
+    $stmnt->bindValue(':value', $value);
+    $stmnt->bindValue(':id', $id);
 
-  //   $stmnt->execute();
-  // }
+    $stmnt->execute();
+  }
 
   // function addPostProperty($id, $title, $key=NULL) {
   //   if (is_null($key)) {
