@@ -130,28 +130,26 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div id="page-container">
-    <?php include "modules/header.php";?>
-    <main id="content-wrap">
-      <div class="jumbotron">
-        <form action="" method="POST">
-          <input type="text" name="title" placeholder="Task Title" required>
-          <textarea name="descr" placeholder="Description"></textarea>
-          <div class="half">
-            <input type="date" name="startdate" placeholder="Start Date">
-            <input type="time" name="starttime" placeholder="Start Time">
-          </div>
-          <div class="half">
-            <input type="date" name="enddate" placeholder="End Date">
-            <input type="time" name="endtime" placeholder="End Time">
-          </div>
-          <input type="text" name="repeat" placeholder="Repeat Pattern">
-          <input type="number" name="priority" placeholder="Priority">
-          <button type="submit">Add Task</button>
-        </form>
-      </div>
-    </main>
-  </div>
+  <?php include "modules/header.php";?>
+  <main id="content-wrap">
+    <div class="jumbotron">
+      <form action="" method="POST">
+        <input type="text" name="title" placeholder="Task Title" required>
+        <textarea name="descr" placeholder="Description"></textarea>
+        <div class="half">
+          <input type="date" name="startdate" placeholder="Start Date">
+          <input type="time" name="starttime" placeholder="Start Time">
+        </div>
+        <div class="half">
+          <input type="date" name="enddate" placeholder="End Date">
+          <input type="time" name="endtime" placeholder="End Time">
+        </div>
+        <input type="text" name="repeat" placeholder="Repeat Pattern">
+        <input type="number" name="priority" placeholder="Priority">
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+  </main>
   <?php include "modules/footer.php";?>
 </body>
 </html>

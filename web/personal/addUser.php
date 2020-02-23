@@ -78,28 +78,26 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div id="page-container">
-    <?php include "modules/header.php";?>
-    <main id="content-wrap">
-      <form action="" method="POST">
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
-        <?php if ($error != NULL) { ?>
-          <p>*</p>
-        <?php } ?>
-        <input type="password" name="passmatch" placeholder="Re-type Password" required />
-        <?php if ($error != NULL) { ?>
-          <p>*</p>
-        <?php } ?>
-        <input type="text" name="display" placeholder="Display Name" required />
-        <button type="submit">Submit</button>
-      </form>
-      <p id='output'></p>
-      <?php if ($error == 'mismatch') { ?>
-        <p>Passwords do not match</p>
+  <?php include "modules/header.php";?>
+  <main id="content-wrap">
+    <form action="" method="POST">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <?php if ($error != NULL) { ?>
+        <p>*</p>
       <?php } ?>
-    </main>
-  </div>
+      <input type="password" name="passmatch" placeholder="Re-type Password" required />
+      <?php if ($error != NULL) { ?>
+        <p>*</p>
+      <?php } ?>
+      <input type="text" name="display" placeholder="Display Name" required />
+      <button type="submit">Submit</button>
+    </form>
+    <p id='output'></p>
+    <?php if ($error == 'mismatch') { ?>
+      <p>Passwords do not match</p>
+    <?php } ?>
+  </main>
   <?php include "modules/footer.php";?>
 </body>
 </html>
