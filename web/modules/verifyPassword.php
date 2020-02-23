@@ -1,5 +1,7 @@
 <?php
-  require "dbConnect.php";
+  if (!isset(get_db)) {
+    require "dbConnect.php";
+  }
   function verify_password($user_table, $username, $password) {
     $db = get_db();
 
