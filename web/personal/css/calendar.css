@@ -44,5 +44,6 @@
 
 .circleButton a {
   text-decoration: none;
+  font-size: calc(3vw + 3px);
   color: var(--tertiary-text-color);
 }
