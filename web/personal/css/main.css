@@ -26,7 +26,12 @@ form > input, form > button, form > textarea{
   width: 100%;
 }
 
-form > .half {
+.half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*form > .half {
   width: 50%;
 }
 
@@ -36,4 +41,4 @@ form > .third {
 
 form > .two-third {
   width: 66.667%;
-}
+}*/
