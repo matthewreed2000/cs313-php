@@ -91,7 +91,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header id="header"></header>
+  <?php include "modules/header.php";?>
   <main id="content-wrap">
     <div class="jumbotron">
       <form action="" method="POST">
@@ -107,6 +107,6 @@
       </form>
     </div>
   </main>
-  <footer id="footer"></footer>
+  <?php include "modules/footer.php";?>
 </body>
 </html>

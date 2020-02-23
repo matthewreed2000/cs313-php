@@ -78,7 +78,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header id="header"></header>
+  <?php include "modules/header.php";?>
   <main id="content-wrap">
     <form action="" method="POST">
       <input type="text" name="username" placeholder="Username" required />
@@ -98,6 +98,6 @@
       <p>Passwords do not match</p>
     <?php } ?>
   </main>
-  <footer id="footer"></footer>
+  <?php include "modules/footer.php";?>
 </body>
 </html>

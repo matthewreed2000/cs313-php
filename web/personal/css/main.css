@@ -17,6 +17,6 @@
   box-sizing: border-box;
 }
 
-form > input{
+form > input, form > button{
   width: 100%;
 }

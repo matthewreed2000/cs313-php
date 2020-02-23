@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="css/calendar.css">
 </head>
 <body>
-  <header id="header"></header>
+  <?php include "modules/header.php";?>
   <main id="content-wrap">
     <h1><?php
       $statement = $db->prepare("SELECT DisplayName FROM UserData
@@ -95,6 +95,6 @@
       <?php } ?>
     </div>
   </main>
-  <footer id="footer"></footer>
+  <?php include "modules/footer.php";?>
 </body>
 </html>
