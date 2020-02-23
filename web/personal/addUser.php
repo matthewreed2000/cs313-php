@@ -45,17 +45,22 @@
 
   $error = NULL;
 
-  if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passmatch'])) {
+  if (isset($_POST['username'])
+    && isset($_POST['password'])
+    && isset($_POST['passmatch'])
+    && isset($_POST['display'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $passmatch = $_POST['passmatch'];
+    $display = $_POST['display'];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
     if ($password == $passmatch) {
-      $query = 'INSERT INTO UserData(username, password) VALUES (:username, :password) ON CONFLICT DO NOTHING';
+      $query = 'INSERT INTO UserData(username, password, displayName) VALUES (:username, :password, :display) ON CONFLICT DO NOTHING';
       $stmnt = $db->prepare($query);
       $stmnt->bindValue(':username', $username);
       $stmnt->bindValue(':password', $hash);
+      $stmnt->bindValue(':display', $display);
       $stmnt->execute();
 
       returnToLogin();
@@ -83,6 +88,8 @@
     <?php if ($error != NULL) { ?>
       <p>*</p>
     <?php } ?>
+    <br />
+    <input type="text" name="display" placeholder="Display Name" required />
     <br />
     <button type="submit">Submit</button>
   </form>
