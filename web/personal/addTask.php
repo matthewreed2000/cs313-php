@@ -96,13 +96,13 @@
     <div class="jumbotron">
       <form action="" method="POST">
         <input type="text" name="title">
-        <input type="text" name="descr">
-        <input type="date" name="startdate">
-        <input type="time" name="starttime">
-        <input type="date" name="enddate">
-        <input type="time" name="endtime">
+        <textarea name="descr"></textarea>
+        <input type="date" name="startdate" class="half">
+        <input type="time" name="starttime" class="half">
+        <input type="date" name="enddate" class="half">
+        <input type="time" name="endtime" class="half">
         <input type="text" name="repeat">
-        <input type="text" name="priority">
+        <input type="number" name="priority">
         <button type="submit">Add Task</button>
       </form>
     </div>
